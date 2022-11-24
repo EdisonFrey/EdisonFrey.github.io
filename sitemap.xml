@@ -6,6 +6,12 @@
   </url><url>
     <loc>https://example.com/</loc>
   </url><url>
+    <loc>https://example.com/posts/</loc>
+  </url><url>
     <loc>https://example.com/tags/</loc>
+  </url><url>
+    <loc>https://example.com/posts/chibifu/</loc>
+  </url><url>
+    <loc>https://example.com/tags/%E8%AF%97%E6%AD%8C/</loc>
   </url>
 </urlset>
