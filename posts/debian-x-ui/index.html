@@ -193,7 +193,7 @@ vim /home/cert/privatekey.pem 粘贴以下内容。
 </span></span></code></pre></div><p>重新加载Nginx配置</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">systemctl</span> <span style="color:#e6db74">reload</span> <span style="color:#e6db74">nginx</span>
 </span></span></code></pre></div><h3 id="创建节点">创建节点</h3>
-<p>不出意外的话，你现在已经可以通过你的域名访问X-UI了，打开Xray面板，输入账号密码，登录面板，点击入站列表，添加，将<strong>传输</strong>改为<strong>ws</strong>，协议改为<strong>trojan</strong>，端口设置为<strong>8443</strong>，公钥路径为<code>/home/cert/certificate.pem</code>，私钥路径为<code>/home/cert/privatekey.pem</code>，其余默认或留空即可。点击详细信息，查看，复制链接，导入即可使用。如需<strong>直连</strong>，将地址改为服务器IP即可实现直连。其他协议类似。</p>
+<p>不出意外的话，你现在已经可以通过你的域名访问X-UI了，打开Xray面板，输入账号密码，登录面板，点击入站列表，添加，将<strong>传输</strong>改为<strong>ws</strong>，协议改为<strong>trojan</strong>，端口设置为<strong>8443</strong>，公钥路径为<code>/home/cert/certificate.pem</code>，私钥路径为<code>/home/cert/privatekey.pem</code>，其余默认或留空即可。点击详细信息，查看，复制链接，导入软件中，由于X-UI长时间未更新，因此需要手动在软件中将传输协议由<code>tcp</code>改为<code>ws</code>，如需<strong>直连</strong>，将地址改为服务器IP即可实现直连。其他协议类似。</p>
 
         </div>
         <div class="row middle-xs">
