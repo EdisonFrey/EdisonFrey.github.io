@@ -15,14 +15,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>诗歌</title>
-      <link>https://example.com/tags/%E8%AF%97%E6%AD%8C/</link>
-      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/tags/%E8%AF%97%E6%AD%8C/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

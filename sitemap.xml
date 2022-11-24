@@ -17,12 +17,6 @@
     <loc>https://example.com/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-09-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/posts/chibifu/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/tags/%E8%AF%97%E6%AD%8C/</loc>
-    <lastmod>2022-01-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://example.com/categories/</loc>
   </url>
 </urlset>
