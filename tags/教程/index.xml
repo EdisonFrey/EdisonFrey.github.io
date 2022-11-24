@@ -7,9 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hax/Woiden科学上网指南</title>
+      <link>https://example.com/posts/debian-x-ui/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/debian-x-ui/</guid>
+      <description>解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
+安装WARP Hax/Woiden属于IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见Github。非IPV6 only的机器请跳过这一步。
+wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence] 按照引导安装，选择添加IPV4代理或添加双栈代理。
+安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 上传Cloudflare证书 使用vim命令新建证书文件。（键入i进入insert模式，开始编辑，Esc推出编辑，键入:wq!保存并退出）
+mkdir /home/cert &amp;amp;&amp;amp; vim /root/cert/certificate.pem vim /home/cert/privatekey.pem 并分别粘贴以下内容。
+-----BEGIN CERTIFICATE----- MIIEFTCCAv2gAwIBAgIUTNa8COmbEvnnmyHFCWCSNbIlrowwDQYJKoZIhvcNAQEL BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgNjdh NGUxOWE1YjBlYzNlOGEyMGI0MDNiZTQzYmI4OTcwHhcNMjIwODIyMDU0NzAwWhcN MzcwODE4MDU0NzAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL/Sy+00iQlMJYRCHTss LxUbTn3DvAIUGvK8IPuYTl24ZyGVJXjI3mq10/3slUkUJLKjowScaMwwVCHwsM8M rWIc97zRec8mjQA7ixayPSEtkXoaRC403nQEDdUqtY5bgpug6PFzZv2tUy3yxVG8 KLQze+O1kIkw+pXvCL9nxPUEZ2SBZgDV/uBnQAZU1iZaQXtZPJaUxjQ1Wn+IBnj0 KZUp7JidkaajcgmDq63gO++Ce6qNqQSHRNnfjFB9OoCcPR2zHOkn+cih9yNyM5XC WCFKuPhHhuvqeIFTrt6lHMwtUrPzeq1Q63r5FemOZl45gj8NFvdoAcRF2eaJWHBI vGUCAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA MB0GA1UdDgQWBBRnPvIl0HzOeOYRAYO0dUqWcZg5ZDAfBgNVHSMEGDAWgBRqKMUf A2v8OOV10yFDxd0H0UD7ODBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs b3VkZmxhcmUuY29tL2I2M2NhZGM0LTU4Y2QtNGRhMC05ZmZlLTE0YTEzODIxMTI3 NS5jcmwwDQYJKoZIhvcNAQELBQADggEBAAG6uWdDYpG9+9r3hMbCYUpA1hQOwh2D viFQLgChN8OvwpAfL0MHBxpafaxOYAVODc/gLgYacAHOnYTytvX6NG6p98FivG/X qpH2CqxUTY9zgD4aMNFSXA1LvVJ//0JcAMVe1P8MdtnIO419On3sQYwTVMTgO+Qw mcjxX8JHQjhohO1xRdJutBA1fbcHzymjHdcIstabxyZf1eG3nLvF9SZcA8GSCSu7 5QWVWM28EVR+VSAxMvXNbnkkuaRY2dOJdFKfc8SG9lSA/nCHprz6F32TKP4HZQay GoxJuobHKaeI/K3WjQlDH1NAd2LWvIsPzvUBc9ugSR2DWsXYvgHs1qc= -----END CERTIFICATE----- -----BEGIN PRIVATE KEY----- MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/0svtNIkJTCWE Qh07LC8VG059w7wCFBryvCD7mE5duGchlSV4yN5qtdP97JVJFCSyo6MEnGjMMFQh 8LDPDK1iHPe80XnPJo0AO4sWsj0hLZF6GkQuNN50BA3VKrWOW4KboOjxc2b9rVMt 8sVRvCi0M3vjtZCJMPqV7wi/Z8T1BGdkgWYA1f7gZ0AGVNYmWkF7WTyWlMY0NVp/ iAZ49CmVKeyYnZGmo3IJg6ut4DvvgnuqjakEh0TZ34xQfTqAnD0dsxzpJ/nIofcj cjOVwlghSrj4R4br6niBU67epRzMLVKz83qtUOt6+RXpjmZeOYI/DRb3aAHERdnm iVhwSLxlAgMBAAECggEABKroJZzGWHcSLKGaA3zj2MzuzOmf4AisNTIPUJmLddIm x3u3fmgCdxdDxTIZQD6tiLlDN+zN/s+OpIeUtDarQclrQwMLEz4HAIJYzccT7Ldz cRF4wKUU5D7ONVzFYsuzcstodhBoT6dRie5jD1+XbMPmvlfTLTttxYs1xWG/7aeD saHbzN7lUiWu5GWgbBYHkeU6KOr83MakGVI82Z6sCJhuQe6fTlvjiqsF5GtyvrZ8 N2BZZVleCWAE0uXntFmezWI6HvtxSBBFSNbqequr3r0IjL8qK8qvJ2k3xYLidERi JX5jDJ+8opSN++Ia+lcpVZQ9F9jGJfpzKvPObVFqWwKBgQDfWepiT9nXAg0UM00y +01JXogm6aHWDgBkQTqjGyC5cuHzF3TssY7pGtyoy7OAcsEqgpyEnUTsd7WbN6Ux Pj+TpVULOtFlJrQR+zIWWCCfC6byXw/S8m9GpBvZescYW4QkOEtQlLIi7HUYlm+Y dHy9eWJewn5b1bI0d4WX6UhQDwKBgQDb3RIa3hAcdsKryZJNN6j/QJFQBYnv+n5Y UXrfFEAsdX2RU0xO8otss51OMrkbZS8qCmTC+hZgvYeUhAKf9SRnO/BH18sZskNW psws2Lq6MM0ZOjZqeVoaEvf6ESLf/bbO/IKoRbtdWdCNilQ0FYpJE27MKcLQ+miB AjXbego4SwKBgQDODxeFkiPpEHRekaIEigLY0MUOGXf8kzhbRi7B8jIzxcCd1KNE B+BQQT8Y364AsF50SMH8O1guTZcX17OpBcQEBIG8dYxgJN/2wuiH4tBdy5M/guKH fLGa26bx8ysh1rTH8cPSWQ0r2TmC8K+OWNIIwKc3w3puYW4ip65x44CakwKBgQCi 91URJyIoBvs6nBleNPCF6pULDF/2yeRWkGaT7Y23poqham24Yt1ngCcMLFq6bKCt 97BCOV7W7AUP112etPT7tBjhF5mKfXCeTNowL6EQm1Wa6mQlPbfEdeTqrUL9ZjDX caFjGvTLN+R21V6ekIzEp6vLlvS5M7K8VSgYe3gRywKBgDz3aSUDhCC3zLvpFlW6 jDX4bOjKoOidWdOdJKA8jtv57c7DhWTtz1Pd+9uf9xvx1dwKmMrvsVmoyd2hmWXq ZrTlwbmZlo1CqWQ8yXzFBPXRXAc+ZJvmzUWIOBS6+i8qo7UuZIHucsJGDlFbvAfE wz7MQiazno/JrI0hYXi3jwcG -----END PRIVATE KEY----- 安装Nginx apt-get install nginx -y 配置Nginx 使用vim命令修改Nginx配置文件。</description>
+    </item>
+    
+    <item>
       <title>简短的科学上网指南</title>
       <link>https://example.com/posts/science-internet-guide/</link>
-      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 12 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/posts/science-internet-guide/</guid>
       <description>获取订阅链接 1.提供服务的商家有很多，各种价位、各种体验，这里推荐魔戒。打开网站，按照指引完成注册。

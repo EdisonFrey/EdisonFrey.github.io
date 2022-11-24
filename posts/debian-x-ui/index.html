@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.106.0">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Notes" />
+  <meta property="og:url" content="https://example.com/posts/debian-x-ui/" />
+  <link rel="canonical" href="https://example.com/posts/debian-x-ui/" /><link rel="alternate" type="application/atom+xml" href="https://example.comindex.xml" title="Notes"><title>Hax/Woiden科学上网指南</title>
+  <meta property="og:title" content="Hax/Woiden科学上网指南" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
+安装WARP Hax/Woiden属于IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见Github。非IPV6 only的机器请跳过这一步。
+wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence] 按照引导安装，选择添加IPV4代理或添加双栈代理。
+安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 上传Cloudflare证书 使用vim命令新建证书文件。（键入i进入insert模式，开始编辑，Esc推出编辑，键入:wq!保存并退出）
+mkdir /home/cert &amp;amp;&amp;amp; vim /root/cert/certificate.pem vim /home/cert/privatekey.pem 并分别粘贴以下内容。
+-----BEGIN CERTIFICATE----- MIIEFTCCAv2gAwIBAgIUTNa8COmbEvnnmyHFCWCSNbIlrowwDQYJKoZIhvcNAQEL BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgNjdh NGUxOWE1YjBlYzNlOGEyMGI0MDNiZTQzYmI4OTcwHhcNMjIwODIyMDU0NzAwWhcN MzcwODE4MDU0NzAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL/Sy&#43;00iQlMJYRCHTss LxUbTn3DvAIUGvK8IPuYTl24ZyGVJXjI3mq10/3slUkUJLKjowScaMwwVCHwsM8M rWIc97zRec8mjQA7ixayPSEtkXoaRC403nQEDdUqtY5bgpug6PFzZv2tUy3yxVG8 KLQze&#43;O1kIkw&#43;pXvCL9nxPUEZ2SBZgDV/uBnQAZU1iZaQXtZPJaUxjQ1Wn&#43;IBnj0 KZUp7JidkaajcgmDq63gO&#43;&#43;Ce6qNqQSHRNnfjFB9OoCcPR2zHOkn&#43;cih9yNyM5XC WCFKuPhHhuvqeIFTrt6lHMwtUrPzeq1Q63r5FemOZl45gj8NFvdoAcRF2eaJWHBI vGUCAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA MB0GA1UdDgQWBBRnPvIl0HzOeOYRAYO0dUqWcZg5ZDAfBgNVHSMEGDAWgBRqKMUf A2v8OOV10yFDxd0H0UD7ODBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs b3VkZmxhcmUuY29tL2I2M2NhZGM0LTU4Y2QtNGRhMC05ZmZlLTE0YTEzODIxMTI3 NS5jcmwwDQYJKoZIhvcNAQELBQADggEBAAG6uWdDYpG9&#43;9r3hMbCYUpA1hQOwh2D viFQLgChN8OvwpAfL0MHBxpafaxOYAVODc/gLgYacAHOnYTytvX6NG6p98FivG/X qpH2CqxUTY9zgD4aMNFSXA1LvVJ//0JcAMVe1P8MdtnIO419On3sQYwTVMTgO&#43;Qw mcjxX8JHQjhohO1xRdJutBA1fbcHzymjHdcIstabxyZf1eG3nLvF9SZcA8GSCSu7 5QWVWM28EVR&#43;VSAxMvXNbnkkuaRY2dOJdFKfc8SG9lSA/nCHprz6F32TKP4HZQay GoxJuobHKaeI/K3WjQlDH1NAd2LWvIsPzvUBc9ugSR2DWsXYvgHs1qc= -----END CERTIFICATE----- -----BEGIN PRIVATE KEY----- MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/0svtNIkJTCWE Qh07LC8VG059w7wCFBryvCD7mE5duGchlSV4yN5qtdP97JVJFCSyo6MEnGjMMFQh 8LDPDK1iHPe80XnPJo0AO4sWsj0hLZF6GkQuNN50BA3VKrWOW4KboOjxc2b9rVMt 8sVRvCi0M3vjtZCJMPqV7wi/Z8T1BGdkgWYA1f7gZ0AGVNYmWkF7WTyWlMY0NVp/ iAZ49CmVKeyYnZGmo3IJg6ut4DvvgnuqjakEh0TZ34xQfTqAnD0dsxzpJ/nIofcj cjOVwlghSrj4R4br6niBU67epRzMLVKz83qtUOt6&#43;RXpjmZeOYI/DRb3aAHERdnm iVhwSLxlAgMBAAECggEABKroJZzGWHcSLKGaA3zj2MzuzOmf4AisNTIPUJmLddIm x3u3fmgCdxdDxTIZQD6tiLlDN&#43;zN/s&#43;OpIeUtDarQclrQwMLEz4HAIJYzccT7Ldz cRF4wKUU5D7ONVzFYsuzcstodhBoT6dRie5jD1&#43;XbMPmvlfTLTttxYs1xWG/7aeD saHbzN7lUiWu5GWgbBYHkeU6KOr83MakGVI82Z6sCJhuQe6fTlvjiqsF5GtyvrZ8 N2BZZVleCWAE0uXntFmezWI6HvtxSBBFSNbqequr3r0IjL8qK8qvJ2k3xYLidERi JX5jDJ&#43;8opSN&#43;&#43;Ia&#43;lcpVZQ9F9jGJfpzKvPObVFqWwKBgQDfWepiT9nXAg0UM00y &#43;01JXogm6aHWDgBkQTqjGyC5cuHzF3TssY7pGtyoy7OAcsEqgpyEnUTsd7WbN6Ux Pj&#43;TpVULOtFlJrQR&#43;zIWWCCfC6byXw/S8m9GpBvZescYW4QkOEtQlLIi7HUYlm&#43;Y dHy9eWJewn5b1bI0d4WX6UhQDwKBgQDb3RIa3hAcdsKryZJNN6j/QJFQBYnv&#43;n5Y UXrfFEAsdX2RU0xO8otss51OMrkbZS8qCmTC&#43;hZgvYeUhAKf9SRnO/BH18sZskNW psws2Lq6MM0ZOjZqeVoaEvf6ESLf/bbO/IKoRbtdWdCNilQ0FYpJE27MKcLQ&#43;miB AjXbego4SwKBgQDODxeFkiPpEHRekaIEigLY0MUOGXf8kzhbRi7B8jIzxcCd1KNE B&#43;BQQT8Y364AsF50SMH8O1guTZcX17OpBcQEBIG8dYxgJN/2wuiH4tBdy5M/guKH fLGa26bx8ysh1rTH8cPSWQ0r2TmC8K&#43;OWNIIwKc3w3puYW4ip65x44CakwKBgQCi 91URJyIoBvs6nBleNPCF6pULDF/2yeRWkGaT7Y23poqham24Yt1ngCcMLFq6bKCt 97BCOV7W7AUP112etPT7tBjhF5mKfXCeTNowL6EQm1Wa6mQlPbfEdeTqrUL9ZjDX caFjGvTLN&#43;R21V6ekIzEp6vLlvS5M7K8VSgYe3gRywKBgDz3aSUDhCC3zLvpFlW6 jDX4bOjKoOidWdOdJKA8jtv57c7DhWTtz1Pd&#43;9uf9xvx1dwKmMrvsVmoyd2hmWXq ZrTlwbmZlo1CqWQ8yXzFBPXRXAc&#43;ZJvmzUWIOBS6&#43;i8qo7UuZIHucsJGDlFbvAfE wz7MQiazno/JrI0hYXi3jwcG -----END PRIVATE KEY----- 安装Nginx apt-get install nginx -y 配置Nginx 使用vim命令修改Nginx配置文件。" />
+  <meta name="description" content="解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
+安装WARP Hax/Woiden属于IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见Github。非IPV6 only的机器请跳过这一步。
+wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence] 按照引导安装，选择添加IPV4代理或添加双栈代理。
+安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 上传Cloudflare证书 使用vim命令新建证书文件。（键入i进入insert模式，开始编辑，Esc推出编辑，键入:wq!保存并退出）
+mkdir /home/cert &amp;amp;&amp;amp; vim /root/cert/certificate.pem vim /home/cert/privatekey.pem 并分别粘贴以下内容。
+-----BEGIN CERTIFICATE----- MIIEFTCCAv2gAwIBAgIUTNa8COmbEvnnmyHFCWCSNbIlrowwDQYJKoZIhvcNAQEL BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgNjdh NGUxOWE1YjBlYzNlOGEyMGI0MDNiZTQzYmI4OTcwHhcNMjIwODIyMDU0NzAwWhcN MzcwODE4MDU0NzAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL/Sy&#43;00iQlMJYRCHTss LxUbTn3DvAIUGvK8IPuYTl24ZyGVJXjI3mq10/3slUkUJLKjowScaMwwVCHwsM8M rWIc97zRec8mjQA7ixayPSEtkXoaRC403nQEDdUqtY5bgpug6PFzZv2tUy3yxVG8 KLQze&#43;O1kIkw&#43;pXvCL9nxPUEZ2SBZgDV/uBnQAZU1iZaQXtZPJaUxjQ1Wn&#43;IBnj0 KZUp7JidkaajcgmDq63gO&#43;&#43;Ce6qNqQSHRNnfjFB9OoCcPR2zHOkn&#43;cih9yNyM5XC WCFKuPhHhuvqeIFTrt6lHMwtUrPzeq1Q63r5FemOZl45gj8NFvdoAcRF2eaJWHBI vGUCAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA MB0GA1UdDgQWBBRnPvIl0HzOeOYRAYO0dUqWcZg5ZDAfBgNVHSMEGDAWgBRqKMUf A2v8OOV10yFDxd0H0UD7ODBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs b3VkZmxhcmUuY29tL2I2M2NhZGM0LTU4Y2QtNGRhMC05ZmZlLTE0YTEzODIxMTI3 NS5jcmwwDQYJKoZIhvcNAQELBQADggEBAAG6uWdDYpG9&#43;9r3hMbCYUpA1hQOwh2D viFQLgChN8OvwpAfL0MHBxpafaxOYAVODc/gLgYacAHOnYTytvX6NG6p98FivG/X qpH2CqxUTY9zgD4aMNFSXA1LvVJ//0JcAMVe1P8MdtnIO419On3sQYwTVMTgO&#43;Qw mcjxX8JHQjhohO1xRdJutBA1fbcHzymjHdcIstabxyZf1eG3nLvF9SZcA8GSCSu7 5QWVWM28EVR&#43;VSAxMvXNbnkkuaRY2dOJdFKfc8SG9lSA/nCHprz6F32TKP4HZQay GoxJuobHKaeI/K3WjQlDH1NAd2LWvIsPzvUBc9ugSR2DWsXYvgHs1qc= -----END CERTIFICATE----- -----BEGIN PRIVATE KEY----- MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/0svtNIkJTCWE Qh07LC8VG059w7wCFBryvCD7mE5duGchlSV4yN5qtdP97JVJFCSyo6MEnGjMMFQh 8LDPDK1iHPe80XnPJo0AO4sWsj0hLZF6GkQuNN50BA3VKrWOW4KboOjxc2b9rVMt 8sVRvCi0M3vjtZCJMPqV7wi/Z8T1BGdkgWYA1f7gZ0AGVNYmWkF7WTyWlMY0NVp/ iAZ49CmVKeyYnZGmo3IJg6ut4DvvgnuqjakEh0TZ34xQfTqAnD0dsxzpJ/nIofcj cjOVwlghSrj4R4br6niBU67epRzMLVKz83qtUOt6&#43;RXpjmZeOYI/DRb3aAHERdnm iVhwSLxlAgMBAAECggEABKroJZzGWHcSLKGaA3zj2MzuzOmf4AisNTIPUJmLddIm x3u3fmgCdxdDxTIZQD6tiLlDN&#43;zN/s&#43;OpIeUtDarQclrQwMLEz4HAIJYzccT7Ldz cRF4wKUU5D7ONVzFYsuzcstodhBoT6dRie5jD1&#43;XbMPmvlfTLTttxYs1xWG/7aeD saHbzN7lUiWu5GWgbBYHkeU6KOr83MakGVI82Z6sCJhuQe6fTlvjiqsF5GtyvrZ8 N2BZZVleCWAE0uXntFmezWI6HvtxSBBFSNbqequr3r0IjL8qK8qvJ2k3xYLidERi JX5jDJ&#43;8opSN&#43;&#43;Ia&#43;lcpVZQ9F9jGJfpzKvPObVFqWwKBgQDfWepiT9nXAg0UM00y &#43;01JXogm6aHWDgBkQTqjGyC5cuHzF3TssY7pGtyoy7OAcsEqgpyEnUTsd7WbN6Ux Pj&#43;TpVULOtFlJrQR&#43;zIWWCCfC6byXw/S8m9GpBvZescYW4QkOEtQlLIi7HUYlm&#43;Y dHy9eWJewn5b1bI0d4WX6UhQDwKBgQDb3RIa3hAcdsKryZJNN6j/QJFQBYnv&#43;n5Y UXrfFEAsdX2RU0xO8otss51OMrkbZS8qCmTC&#43;hZgvYeUhAKf9SRnO/BH18sZskNW psws2Lq6MM0ZOjZqeVoaEvf6ESLf/bbO/IKoRbtdWdCNilQ0FYpJE27MKcLQ&#43;miB AjXbego4SwKBgQDODxeFkiPpEHRekaIEigLY0MUOGXf8kzhbRi7B8jIzxcCd1KNE B&#43;BQQT8Y364AsF50SMH8O1guTZcX17OpBcQEBIG8dYxgJN/2wuiH4tBdy5M/guKH fLGa26bx8ysh1rTH8cPSWQ0r2TmC8K&#43;OWNIIwKc3w3puYW4ip65x44CakwKBgQCi 91URJyIoBvs6nBleNPCF6pULDF/2yeRWkGaT7Y23poqham24Yt1ngCcMLFq6bKCt 97BCOV7W7AUP112etPT7tBjhF5mKfXCeTNowL6EQm1Wa6mQlPbfEdeTqrUL9ZjDX caFjGvTLN&#43;R21V6ekIzEp6vLlvS5M7K8VSgYe3gRywKBgDz3aSUDhCC3zLvpFlW6 jDX4bOjKoOidWdOdJKA8jtv57c7DhWTtz1Pd&#43;9uf9xvx1dwKmMrvsVmoyd2hmWXq ZrTlwbmZlo1CqWQ8yXzFBPXRXAc&#43;ZJvmzUWIOBS6&#43;i8qo7UuZIHucsJGDlFbvAfE wz7MQiazno/JrI0hYXi3jwcG -----END PRIVATE KEY----- 安装Nginx apt-get install nginx -y 配置Nginx 使用vim命令修改Nginx配置文件。" />
+  <meta property="og:locale" content="" /><meta property="og:image" content="" />
+  
+
+  
+    <style>body{font-family:FangSong;-webkit-font-smoothing:antialiased;margin:0 20px}article{max-width:900px;margin-left:auto;margin-right:auto}a{color:#000;text-decoration:none}a:hover{font-weight:600;text-decoration:underline}.post-ads{margin:50px 0}.markdown-body{font-size:18px;max-width:100%}.markdown-body a{text-decoration:underline;text-decoration-color:#000}.markdown-body blockquote{margin:0;padding:0 1em;color:#57606a;border-left:.25em solid #d0d7de}.markdown-body pre{padding:16px;overflow:auto;border-radius:10px}.markdown-body code{padding:.2em .4em;font-size:85%;background-color:#f6f8fa;border-radius:6px}.markdown-body pre>code{padding:0;font-size:100%;background-color:inherit;border:0}.Chinese .markdown-body{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:3rem;margin-top:32px;font-family:sans-serif}.header-title a{text-decoration:none}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.2rem;margin:12px 0}.posts-tags{font-size:.8rem;margin:auto;text-align:center}.posts-tag{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:30px;font-size:15px;margin-bottom:30px}.site-footer-item{margin-right:12px}.post-content img{max-width:100%;display:block;margin-right:auto;margin-top:12px}.post-header{margin-bottom:50px}.post-title{font-size:1.8rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:800;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-align:justify;text-justify:ideographic;margin-bottom:1em}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-bottom:50px;margin-top:100px}.related-content li{margin:5px 0}.taxonomy-term{font-size:3rem}.gallery-img{text-align:center}.gallery-img span{text-align:center}.gallery-img-desc{font-size:.8em;font-weight:800}#disqus_thread{position:relative}#disqus_thread:after{content:"";display:block;height:55px;width:100%;position:absolute;bottom:0;background:#fff}@media screen and (max-width:600px){.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-body{font-size:16px}.post-title{font-size:2rem}.post-content p{letter-spacing:.05em}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:initial;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:none;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Notes">
+
+  
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="/"
+      >Notes</a
+    >
+  </div>
+  <div class="header-subtitle"></div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+</div>
+<div class="row end-xs">
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Hax/Woiden科学上网指南</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2022-09-15 00:00:00 UTC">
+                15 Sep 2022
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h3 id="解析域名">解析域名</h3>
+<p>在<strong>Cloudflare</strong>中添加<strong>DNS</strong>，将你的服务器地址与域名地址绑定，并在将<strong>SSL/TLS</strong>中加密模式改为<strong>完全</strong>。</p>
+<h3 id="安装warp">安装WARP</h3>
+<p><strong>Hax/Woiden</strong>属于<strong>IPV6 only</strong>的机器，要想用来科学上网就需要通过安装<strong>WARP</strong>补全<strong>IPV4</strong>，以获取完整的上网体验。推荐使用<strong>fscarmen</strong>的WARP脚本，项目地址见<a href="https://github.com/fscarmen/warp">Github</a>。非<strong>IPV6 only</strong>的机器请跳过这一步。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">wget</span> <span style="color:#e6db74">-N</span> <span style="color:#e6db74">https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh</span> <span style="color:#e6db74">&amp;&amp;</span> <span style="color:#e6db74">bash</span> <span style="color:#e6db74">menu.sh</span> <span style="color:#e6db74">[option]</span> <span style="color:#e6db74">[lisence]</span>
+</span></span></code></pre></div><p>按照引导安装，选择添加IPV4代理或添加双栈代理。</p>
+<h3 id="安装xray面板">安装Xray面板</h3>
+<p>推荐使用<strong>X-UI</strong>，方便管理，项目地址见<a href="https://github.com/vaxilu/x-ui">Github</a>。记住端口、用户名及密码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">bash</span> <span style="color:#e6db74">&lt;(curl</span> <span style="color:#e6db74">-Ls</span> <span style="color:#e6db74">https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)</span>
+</span></span></code></pre></div><h3 id="上传cloudflare证书">上传<strong>Cloudflare</strong>证书</h3>
+<p>使用<strong>vim</strong>命令新建证书文件。（键入<code>i</code>进入insert模式，开始编辑，Esc推出编辑，键入<code>:wq!</code>保存并退出）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> <span style="color:#e6db74">/home/cert</span> <span style="color:#e6db74">&amp;&amp;</span> <span style="color:#e6db74">vim</span> <span style="color:#e6db74">/root/cert/certificate.pem</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">vim</span> <span style="color:#e6db74">/home/cert/privatekey.pem</span>
+</span></span></code></pre></div><p>并分别粘贴以下内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>-----BEGIN CERTIFICATE-----
+</span></span><span style="display:flex;"><span>MIIEFTCCAv2gAwIBAgIUTNa8COmbEvnnmyHFCWCSNbIlrowwDQYJKoZIhvcNAQEL
+</span></span><span style="display:flex;"><span>BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
+</span></span><span style="display:flex;"><span>Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD
+</span></span><span style="display:flex;"><span>VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgNjdh
+</span></span><span style="display:flex;"><span>NGUxOWE1YjBlYzNlOGEyMGI0MDNiZTQzYmI4OTcwHhcNMjIwODIyMDU0NzAwWhcN
+</span></span><span style="display:flex;"><span>MzcwODE4MDU0NzAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy
+</span></span><span style="display:flex;"><span>ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAL/Sy+00iQlMJYRCHTss
+</span></span><span style="display:flex;"><span>LxUbTn3DvAIUGvK8IPuYTl24ZyGVJXjI3mq10/3slUkUJLKjowScaMwwVCHwsM8M
+</span></span><span style="display:flex;"><span>rWIc97zRec8mjQA7ixayPSEtkXoaRC403nQEDdUqtY5bgpug6PFzZv2tUy3yxVG8
+</span></span><span style="display:flex;"><span>KLQze+O1kIkw+pXvCL9nxPUEZ2SBZgDV/uBnQAZU1iZaQXtZPJaUxjQ1Wn+IBnj0
+</span></span><span style="display:flex;"><span>KZUp7JidkaajcgmDq63gO++Ce6qNqQSHRNnfjFB9OoCcPR2zHOkn+cih9yNyM5XC
+</span></span><span style="display:flex;"><span>WCFKuPhHhuvqeIFTrt6lHMwtUrPzeq1Q63r5FemOZl45gj8NFvdoAcRF2eaJWHBI
+</span></span><span style="display:flex;"><span>vGUCAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA
+</span></span><span style="display:flex;"><span>MB0GA1UdDgQWBBRnPvIl0HzOeOYRAYO0dUqWcZg5ZDAfBgNVHSMEGDAWgBRqKMUf
+</span></span><span style="display:flex;"><span>A2v8OOV10yFDxd0H0UD7ODBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs
+</span></span><span style="display:flex;"><span>b3VkZmxhcmUuY29tL2I2M2NhZGM0LTU4Y2QtNGRhMC05ZmZlLTE0YTEzODIxMTI3
+</span></span><span style="display:flex;"><span>NS5jcmwwDQYJKoZIhvcNAQELBQADggEBAAG6uWdDYpG9+9r3hMbCYUpA1hQOwh2D
+</span></span><span style="display:flex;"><span>viFQLgChN8OvwpAfL0MHBxpafaxOYAVODc/gLgYacAHOnYTytvX6NG6p98FivG/X
+</span></span><span style="display:flex;"><span>qpH2CqxUTY9zgD4aMNFSXA1LvVJ//0JcAMVe1P8MdtnIO419On3sQYwTVMTgO+Qw
+</span></span><span style="display:flex;"><span>mcjxX8JHQjhohO1xRdJutBA1fbcHzymjHdcIstabxyZf1eG3nLvF9SZcA8GSCSu7
+</span></span><span style="display:flex;"><span>5QWVWM28EVR+VSAxMvXNbnkkuaRY2dOJdFKfc8SG9lSA/nCHprz6F32TKP4HZQay
+</span></span><span style="display:flex;"><span>GoxJuobHKaeI/K3WjQlDH1NAd2LWvIsPzvUBc9ugSR2DWsXYvgHs1qc=
+</span></span><span style="display:flex;"><span>-----END CERTIFICATE-----
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>-----BEGIN PRIVATE KEY-----
+</span></span><span style="display:flex;"><span>MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/0svtNIkJTCWE
+</span></span><span style="display:flex;"><span>Qh07LC8VG059w7wCFBryvCD7mE5duGchlSV4yN5qtdP97JVJFCSyo6MEnGjMMFQh
+</span></span><span style="display:flex;"><span>8LDPDK1iHPe80XnPJo0AO4sWsj0hLZF6GkQuNN50BA3VKrWOW4KboOjxc2b9rVMt
+</span></span><span style="display:flex;"><span>8sVRvCi0M3vjtZCJMPqV7wi/Z8T1BGdkgWYA1f7gZ0AGVNYmWkF7WTyWlMY0NVp/
+</span></span><span style="display:flex;"><span>iAZ49CmVKeyYnZGmo3IJg6ut4DvvgnuqjakEh0TZ34xQfTqAnD0dsxzpJ/nIofcj
+</span></span><span style="display:flex;"><span>cjOVwlghSrj4R4br6niBU67epRzMLVKz83qtUOt6+RXpjmZeOYI/DRb3aAHERdnm
+</span></span><span style="display:flex;"><span>iVhwSLxlAgMBAAECggEABKroJZzGWHcSLKGaA3zj2MzuzOmf4AisNTIPUJmLddIm
+</span></span><span style="display:flex;"><span>x3u3fmgCdxdDxTIZQD6tiLlDN+zN/s+OpIeUtDarQclrQwMLEz4HAIJYzccT7Ldz
+</span></span><span style="display:flex;"><span>cRF4wKUU5D7ONVzFYsuzcstodhBoT6dRie5jD1+XbMPmvlfTLTttxYs1xWG/7aeD
+</span></span><span style="display:flex;"><span>saHbzN7lUiWu5GWgbBYHkeU6KOr83MakGVI82Z6sCJhuQe6fTlvjiqsF5GtyvrZ8
+</span></span><span style="display:flex;"><span>N2BZZVleCWAE0uXntFmezWI6HvtxSBBFSNbqequr3r0IjL8qK8qvJ2k3xYLidERi
+</span></span><span style="display:flex;"><span>JX5jDJ+8opSN++Ia+lcpVZQ9F9jGJfpzKvPObVFqWwKBgQDfWepiT9nXAg0UM00y
+</span></span><span style="display:flex;"><span>+01JXogm6aHWDgBkQTqjGyC5cuHzF3TssY7pGtyoy7OAcsEqgpyEnUTsd7WbN6Ux
+</span></span><span style="display:flex;"><span>Pj+TpVULOtFlJrQR+zIWWCCfC6byXw/S8m9GpBvZescYW4QkOEtQlLIi7HUYlm+Y
+</span></span><span style="display:flex;"><span>dHy9eWJewn5b1bI0d4WX6UhQDwKBgQDb3RIa3hAcdsKryZJNN6j/QJFQBYnv+n5Y
+</span></span><span style="display:flex;"><span>UXrfFEAsdX2RU0xO8otss51OMrkbZS8qCmTC+hZgvYeUhAKf9SRnO/BH18sZskNW
+</span></span><span style="display:flex;"><span>psws2Lq6MM0ZOjZqeVoaEvf6ESLf/bbO/IKoRbtdWdCNilQ0FYpJE27MKcLQ+miB
+</span></span><span style="display:flex;"><span>AjXbego4SwKBgQDODxeFkiPpEHRekaIEigLY0MUOGXf8kzhbRi7B8jIzxcCd1KNE
+</span></span><span style="display:flex;"><span>B+BQQT8Y364AsF50SMH8O1guTZcX17OpBcQEBIG8dYxgJN/2wuiH4tBdy5M/guKH
+</span></span><span style="display:flex;"><span>fLGa26bx8ysh1rTH8cPSWQ0r2TmC8K+OWNIIwKc3w3puYW4ip65x44CakwKBgQCi
+</span></span><span style="display:flex;"><span>91URJyIoBvs6nBleNPCF6pULDF/2yeRWkGaT7Y23poqham24Yt1ngCcMLFq6bKCt
+</span></span><span style="display:flex;"><span>97BCOV7W7AUP112etPT7tBjhF5mKfXCeTNowL6EQm1Wa6mQlPbfEdeTqrUL9ZjDX
+</span></span><span style="display:flex;"><span>caFjGvTLN+R21V6ekIzEp6vLlvS5M7K8VSgYe3gRywKBgDz3aSUDhCC3zLvpFlW6
+</span></span><span style="display:flex;"><span>jDX4bOjKoOidWdOdJKA8jtv57c7DhWTtz1Pd+9uf9xvx1dwKmMrvsVmoyd2hmWXq
+</span></span><span style="display:flex;"><span>ZrTlwbmZlo1CqWQ8yXzFBPXRXAc+ZJvmzUWIOBS6+i8qo7UuZIHucsJGDlFbvAfE
+</span></span><span style="display:flex;"><span>wz7MQiazno/JrI0hYXi3jwcG
+</span></span><span style="display:flex;"><span>-----END PRIVATE KEY-----
+</span></span></code></pre></div><h3 id="安装nginx">安装Nginx</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">apt-get</span> <span style="color:#e6db74">install</span> <span style="color:#e6db74">nginx</span> <span style="color:#e6db74">-y</span>
+</span></span></code></pre></div><h3 id="配置nginx">配置Nginx</h3>
+<p>使用<strong>vim</strong>命令修改<strong>Nginx</strong>配置文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">vim</span> <span style="color:#e6db74">/etc/nginx/sites-enabled/default</span>
+</span></span></code></pre></div><p>粘贴以下内容。<code>example.com</code>、<code>/home/cert/</code>和<code>127.0.0.1:1234</code>根据实际情况修改。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:80</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">proxy_ssl_server_name</span> <span style="color:#66d9ef">on</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_tokens</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate</span>    <span style="color:#e6db74">/home/cert/certificate.pem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_certificate_key</span>    <span style="color:#e6db74">/home/cert/privatekey.pem</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_session_timeout</span> <span style="color:#e6db74">1d</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_session_tickets</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_protocols</span> <span style="color:#e6db74">TLSv1</span> <span style="color:#e6db74">TLSv1.1</span> <span style="color:#e6db74">TLSv1.2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_ciphers</span> <span style="color:#e6db74">&#39;ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ssl_prefer_server_ciphers</span> <span style="color:#66d9ef">on</span>; 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">add_header</span> <span style="color:#e6db74">Strict-Transport-Security</span> <span style="color:#e6db74">max-age=15768000</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">example.com</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client_max_body_size</span> <span style="color:#e6db74">128M</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:1234</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_redirect</span> <span style="color:#66d9ef">off</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> $http_host;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>重新加载Nginx配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">systemctl</span> <span style="color:#e6db74">reload</span> <span style="color:#e6db74">nginx</span>
+</span></span></code></pre></div><h3 id="创建节点">创建节点</h3>
+<p>不出意外的话，你现在已经可以通过你的域名访问X-UI了，打开Xray面板，输入账号密码，登录面板，点击入站列表，添加，将<strong>传输</strong>改为<strong>ws</strong>，协议改为<strong>trojan</strong>，端口设置为<strong>8443</strong>，公钥路径为<code>/home/cert/certificate.pem</code>，私钥路径为<code>/home/cert/certificate.pem</code>，其余默认或留空即可。点击详细信息，查看，复制链接，导入即可使用。如需<strong>直连</strong>，将地址改为服务器IP即可实现直连。</p>
+
+        </div>
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="/tags/%E6%95%99%E7%A8%8B/">
+                教程
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+          
+          <div style="height: 50px;"></div>
+        
+
+        <div class="site-footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container">
+        访客数: <span id="busuanzi_value_site_uv"></span>
+        |
+        访问量: <span id="busuanzi_value_site_pv"></span>
+    </span>
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  
+
+</body>
+
+</html>
