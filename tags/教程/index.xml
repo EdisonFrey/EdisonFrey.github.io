@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教程 on Notes</title>
+    <link>https://example.com/tags/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>简短的科学上网指南</title>
+      <link>https://example.com/posts/science-internet-guide/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/science-internet-guide/</guid>
+      <description>获取订阅链接 1.提供服务的商家有很多，各种价位、各种体验，这里推荐魔戒。打开网站，按照指引完成注册。
+2.登录后，点击购买订阅，选择你觉得合适的套餐购买。（商家随时可能跑路，年付需谨慎）
+3.点击我的订阅，一键订阅，复制订阅链接。（其他商家的网站大同小异，具体自己摸索）
+安装软件 1.如果你正在使用安卓，推荐v2rayNG，这是一款十分方便的工具软件，项目地址见Github。
+2.如果你正在使用Windows，推荐v2rayN，项目地址见Github。
+3.如果你正在使用iOS，你需要一个非大陆区的AppleID来下载软件，推荐付费的Shadowrocket。
+（未知账号请在AppStore内登录，务必不要登录iCloud，避免锁机）
+4.如果你正在使用Linux，那么我相信你不需要这么基础的教程。
+导入订阅 软件操作逻辑基本相同，点击添加订阅（Subscribe），将购买的订阅链接粘贴上去，更新订阅后即可获得配置信息，点击你需要的地区连接即可，此时你就可以打开Google，查找你需要的资料了。软件功能很简单，设置项基本都是字面意思，不明白的可以自行Google，这里就不过多介绍了。</description>
+    </item>
+    
+  </channel>
+</rss>
