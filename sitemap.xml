@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/posts/debian-x-ui/</loc>
-    <lastmod>2022-09-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://example.com/</loc>
     <lastmod>2022-09-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,6 +12,9 @@
     <lastmod>2022-09-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2022-09-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://example.com/posts/debian-x-ui/</loc>
     <lastmod>2022-09-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://example.com/posts/science-internet-guide/</loc>
