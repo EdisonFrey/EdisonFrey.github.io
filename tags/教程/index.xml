@@ -5,6 +5,7 @@
     <link>https://example.com/tags/%E6%95%99%E7%A8%8B/</link>
     <description>Recent content in 教程 on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
     <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自建节点科学上网指南</title>
