@@ -2,24 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://enotes.cf/</loc>
-    <lastmod>2022-09-15T00:00:00+00:00</lastmod>
+    <loc>https://enotes.cf/categories/</loc>
   </url><url>
-    <loc>https://enotes.cf/posts/</loc>
-    <lastmod>2022-09-15T00:00:00+00:00</lastmod>
+    <loc>https://enotes.cf/</loc>
   </url><url>
     <loc>https://enotes.cf/tags/</loc>
-    <lastmod>2022-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://enotes.cf/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2022-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://enotes.cf/posts/debian-x-ui/</loc>
-    <lastmod>2022-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://enotes.cf/posts/science-internet-guide/</loc>
-    <lastmod>2022-08-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://enotes.cf/categories/</loc>
   </url>
 </urlset>
