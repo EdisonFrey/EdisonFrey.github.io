@@ -39,14 +39,5 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
 导入订阅 软件操作逻辑基本相同，点击添加订阅（Subscribe），将购买的订阅链接粘贴上去，更新订阅后即可获得配置信息，点击你需要的地区连接即可，此时你就可以打开Google，查找你需要的资料了。软件功能很简单，设置项基本都是字面意思，不明白的可以自行Google，这里就不过多介绍了。</description>
     </item>
     
-    <item>
-      <title>Travel Map</title>
-      <link>https://enotes.cf/posts/travel/</link>
-      <pubDate>Fri, 30 Aug 2019 20:33:03 +0800</pubDate>
-      
-      <guid>https://enotes.cf/posts/travel/</guid>
-      <description>旅行记录</description>
-    </item>
-    
   </channel>
 </rss>
