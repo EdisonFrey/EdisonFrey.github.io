@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Notes</title>
-    <link>https://enotes.cf/posts/</link>
+    <link>https://enotes.eu.org/posts/</link>
     <description>Recent content in Posts on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://enotes.cf/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://enotes.eu.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自建节点指南</title>
-      <link>https://enotes.cf/posts/x-ui/</link>
+      <link>https://enotes.eu.org/posts/x-ui/</link>
       <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://enotes.cf/posts/x-ui/</guid>
+      <guid>https://enotes.eu.org/posts/x-ui/</guid>
       <description>解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见Github。
 wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence] wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
@@ -24,10 +24,10 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
     
     <item>
       <title>科学上网指南</title>
-      <link>https://enotes.cf/posts/science-internet/</link>
+      <link>https://enotes.eu.org/posts/science-internet/</link>
       <pubDate>Fri, 12 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://enotes.cf/posts/science-internet/</guid>
+      <guid>https://enotes.eu.org/posts/science-internet/</guid>
       <description>获取订阅链接 1.提供服务的商家有很多，各种价位、各种体验，这里推荐魔戒。打开网站，按照指引完成注册。
 2.登录后，点击购买订阅，选择你觉得合适的套餐购买。（商家随时可能跑路，年付需谨慎）
 3.点击我的订阅，一键订阅，复制订阅链接。（其他商家的网站大同小异，具体自己摸索）
