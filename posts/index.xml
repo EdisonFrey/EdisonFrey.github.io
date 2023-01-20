@@ -18,9 +18,40 @@ secret = &amp;#34;ee60cedc11cbe16e1a7e15a4fdeedb74da62696c6962696c692e636f6d&amp
     </item>
     
     <item>
+      <title>关于MTProto的Docker部署指南</title>
+      <link>https://enotes.eu.org/posts/mtproto-docker/</link>
+      <pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://enotes.eu.org/posts/mtproto-docker/</guid>
+      <description>生成密钥 设置伪装域名，生成密钥
+docker run --rm nineseconds/mtg:master generate-secret --hex bilibili.com 生成配置文件 mkdir -p /opt/mtproto &amp;amp;&amp;amp; vim /opt/mtproto/config.toml 端口可根据需求自行更改
+secret = &amp;#34;ee60cedc11cbe16e1a7e15a4fdeedb74da62696c6962696c692e636f6d&amp;#34; bind-to = &amp;#34;0.0.0.0:36729&amp;#34; 启动容器 docker run -d \ --name mtproto \ --restart always \ --network host \ -v /opt/mtproto/config.toml:/config.toml \ nineseconds/mtg:master </description>
+    </item>
+    
+    <item>
+      <title>关于MTProto的Docker部署指南</title>
+      <link>https://enotes.eu.org/posts/mtproto/</link>
+      <pubDate>Sun, 03 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://enotes.eu.org/posts/mtproto/</guid>
+      <description>安装程序 创建目录
+mkdir -p /opt/mtproto/temp &amp;amp;&amp;amp; cd /opt/mtproto/temp 下载程序
+wget https://github.com/9seconds/mtg/releases/download/v2.1.7/mtg-2.1.7-linux-amd64.tar.gz 解压
+tar -zxvf mtg-2.1.7-linux-amd64.tar.gz 移动
+mv /opt/mtproto/temp/mtg-2.1.7-linux-amd64/mtg /usr/local/bin 删除残留文件
+rm -rf /opt/mtproto/temp 配置应用 生成密钥
+mtg generate-secret --hex bilibili.com 编辑密钥，端口自行更改
+vim /opt/mtproto/config.toml secret = &amp;#34;ee473ce5d4958eb5f968c87680a23854a0676f6f676c652e636f6d&amp;#34; bind-to = &amp;#34;0.0.0.0:25698&amp;#34; 设置开机自启 创建目录
+mkdir -p /usr/lib/systemd/system 编辑自启文件
+vim /usr/lib/systemd/system/mtproto.service [Unit] Description=MTProto Documentation=https://github.com/9seconds/mtg After=network.target [Service] ExecStart=/usr/local/bin/mtg run /opt/mtproto/config.toml Restart=always RestartSec=3 DynamicUser=true AmbientCapabilities=CAP_NET_BIND_SERVICE [Install] WantedBy=multi-user.target 允许开机启动
+systemctl enable mtproto 启动进程
+systemctl start mtproto </description>
+    </item>
+    
+    <item>
       <title>自建节点指南</title>
       <link>https://enotes.eu.org/posts/x-ui/</link>
-      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
       
       <guid>https://enotes.eu.org/posts/x-ui/</guid>
       <description>解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
@@ -36,7 +67,7 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
     <item>
       <title>科学上网指南</title>
       <link>https://enotes.eu.org/posts/science-internet/</link>
-      <pubDate>Fri, 12 Aug 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://enotes.eu.org/posts/science-internet/</guid>
       <description>获取订阅链接 1.提供服务的商家有很多，各种价位、各种体验，这里推荐魔戒。打开网站，按照指引完成注册。
