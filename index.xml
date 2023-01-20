@@ -5,18 +5,7 @@
     <link>https://enotes.eu.org/</link>
     <description>Recent content on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://enotes.eu.org/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>关于MTProxy的部署指南</title>
-      <link>https://enotes.eu.org/posts/mtproxy/</link>
-      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://enotes.eu.org/posts/mtproxy/</guid>
-      <description>生成密钥 设置伪装域名，生成密钥
-docker run --rm nineseconds/mtg:master generate-secret --hex bilibili.com 生成配置文件 mkdir -p /opt/mtproxy &amp;amp;&amp;amp; vim /opt/mtproxy/config.toml 端口可根据需求自行更改
-secret = &amp;#34;ee60cedc11cbe16e1a7e15a4fdeedb74da62696c6962696c692e636f6d&amp;#34; bind-to = &amp;#34;0.0.0.0:36729&amp;#34; 启动容器 docker run -d \ --name mtproxy \ --restart always \ --network host \ -v /opt/mtproxy/config.toml:/config.toml \ nineseconds/mtg:master </description>
-    </item>
-    
+    <lastBuildDate>Sun, 03 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://enotes.eu.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于MTProto的Docker部署指南</title>
       <link>https://enotes.eu.org/posts/mtproto-docker/</link>
