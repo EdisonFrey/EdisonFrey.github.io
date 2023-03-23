@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.111.3">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,7 +17,7 @@ wget https://github.com/9seconds/mtg/releases/download/v2.1.7/mtg-2.1.7-linux-am
 tar -zxvf mtg-2.1.7-linux-amd64.tar.gz 移动
 mv /opt/mtproto/temp/mtg-2.1.7-linux-amd64/mtg /usr/local/bin 删除残留文件
 rm -rf /opt/mtproto/temp 配置应用 生成密钥
-mtg generate-secret --hex bilibili.com 编辑密钥，端口自行更改
+mtg generate-secret --hex www.bilibili.com 编辑密钥，端口自行更改
 vim /opt/mtproto/config.toml secret = &amp;#34;ee473ce5d4958eb5f968c87680a23854a0676f6f676c652e636f6d&amp;#34; bind-to = &amp;#34;0.0.0.0:25698&amp;#34; 设置开机自启 创建目录
 mkdir -p /usr/lib/systemd/system 编辑自启文件
 vim /usr/lib/systemd/system/mtproto.service [Unit] Description=MTProto Documentation=https://github.com/9seconds/mtg After=network.target [Service] ExecStart=/usr/local/bin/mtg run /opt/mtproto/config.toml Restart=always RestartSec=3 DynamicUser=true AmbientCapabilities=CAP_NET_BIND_SERVICE [Install] WantedBy=multi-user.target 允许开机启动
@@ -29,7 +29,7 @@ wget https://github.com/9seconds/mtg/releases/download/v2.1.7/mtg-2.1.7-linux-am
 tar -zxvf mtg-2.1.7-linux-amd64.tar.gz 移动
 mv /opt/mtproto/temp/mtg-2.1.7-linux-amd64/mtg /usr/local/bin 删除残留文件
 rm -rf /opt/mtproto/temp 配置应用 生成密钥
-mtg generate-secret --hex bilibili.com 编辑密钥，端口自行更改
+mtg generate-secret --hex www.bilibili.com 编辑密钥，端口自行更改
 vim /opt/mtproto/config.toml secret = &amp;#34;ee473ce5d4958eb5f968c87680a23854a0676f6f676c652e636f6d&amp;#34; bind-to = &amp;#34;0.0.0.0:25698&amp;#34; 设置开机自启 创建目录
 mkdir -p /usr/lib/systemd/system 编辑自启文件
 vim /usr/lib/systemd/system/mtproto.service [Unit] Description=MTProto Documentation=https://github.com/9seconds/mtg After=network.target [Service] ExecStart=/usr/local/bin/mtg run /opt/mtproto/config.toml Restart=always RestartSec=3 DynamicUser=true AmbientCapabilities=CAP_NET_BIND_SERVICE [Install] WantedBy=multi-user.target 允许开机启动
@@ -102,7 +102,7 @@ systemctl start mtproto " /><meta property="og:image" content="" />
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>rm -rf /opt/mtproto/temp
 </span></span></code></pre></div><h3 id="配置应用">配置应用</h3>
 <p>生成密钥</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>mtg generate-secret --hex bilibili.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>mtg generate-secret --hex www.bilibili.com
 </span></span></code></pre></div><p>编辑密钥，端口自行更改</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>vim /opt/mtproto/config.toml
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>secret = <span style="color:#e6db74">&#34;ee473ce5d4958eb5f968c87680a23854a0676f6f676c652e636f6d&#34;</span>

@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.110.0">
+    <meta name="generator" content="Hugo 0.111.3">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,10 +12,10 @@
 		<meta property="og:title" content="关于MTProto的Docker部署指南" />
 		<meta property="og:type" content="article" />
 		<meta property="og:description" content="生成密钥 设置伪装域名，生成密钥
-docker run --rm nineseconds/mtg:master generate-secret --hex bilibili.com 生成配置文件 mkdir -p /opt/mtproto &amp;amp;&amp;amp; vim /opt/mtproto/config.toml 端口可根据需求自行更改
+docker run --rm nineseconds/mtg:master generate-secret --hex www.bilibili.com 生成配置文件 mkdir -p /opt/mtproto &amp;amp;&amp;amp; vim /opt/mtproto/config.toml 端口可根据需求自行更改
 secret = &amp;#34;ee60cedc11cbe16e1a7e15a4fdeedb74da62696c6962696c692e636f6d&amp;#34; bind-to = &amp;#34;0.0.0.0:36729&amp;#34; 启动容器 docker run -d \ --name mtproto \ --restart always \ --network host \ -v /opt/mtproto/config.toml:/config.toml \ nineseconds/mtg:master " />
 		<meta name="description" content="生成密钥 设置伪装域名，生成密钥
-docker run --rm nineseconds/mtg:master generate-secret --hex bilibili.com 生成配置文件 mkdir -p /opt/mtproto &amp;amp;&amp;amp; vim /opt/mtproto/config.toml 端口可根据需求自行更改
+docker run --rm nineseconds/mtg:master generate-secret --hex www.bilibili.com 生成配置文件 mkdir -p /opt/mtproto &amp;amp;&amp;amp; vim /opt/mtproto/config.toml 端口可根据需求自行更改
 secret = &amp;#34;ee60cedc11cbe16e1a7e15a4fdeedb74da62696c6962696c692e636f6d&amp;#34; bind-to = &amp;#34;0.0.0.0:36729&amp;#34; 启动容器 docker run -d \ --name mtproto \ --restart always \ --network host \ -v /opt/mtproto/config.toml:/config.toml \ nineseconds/mtg:master " /><meta property="og:image" content="" />
     
 
@@ -73,7 +73,7 @@ secret = &amp;#34;ee60cedc11cbe16e1a7e15a4fdeedb74da62696c6962696c692e636f6d&amp
           
           <h3 id="生成密钥">生成密钥</h3>
 <p>设置<strong>伪装域名</strong>，生成<strong>密钥</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run --rm nineseconds/mtg:master generate-secret --hex bilibili.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run --rm nineseconds/mtg:master generate-secret --hex www.bilibili.com
 </span></span></code></pre></div><h3 id="生成配置文件">生成配置文件</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> -p /opt/mtproto &amp;&amp; vim /opt/mtproto/config.toml
 </span></span></code></pre></div><p>端口可根据需求<strong>自行更改</strong></p>
