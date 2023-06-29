@@ -5,6 +5,7 @@
     <link>https://enotes.eu.org/posts/</link>
     <description>Recent content in Posts on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
     <lastBuildDate>Sun, 12 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://enotes.eu.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于MTProto的Docker部署指南</title>
@@ -47,7 +48,7 @@ systemctl start mtproto </description>
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见Github。
 wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence] wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
 安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
-bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ enwaiax/x-ui:alpha-zh docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry.</description>
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ enwaiax/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry.</description>
     </item>
     
     <item>
