@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.115.1">
+    <meta name="generator" content="Hugo 0.115.4">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,12 +15,12 @@
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见Github。
 wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence] wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
 安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
-bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ manliz/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry." />
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ tzebit/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry." />
 		<meta name="description" content="解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见Github。
 wget -N https://raw.githubusercontent.com/fscarmen/warp/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence] wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
 安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
-bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ manliz/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry." /><meta property="og:image" content="" />
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ tzebit/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry." /><meta property="og:image" content="" />
     
 
     
@@ -92,7 +92,7 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
 </span></span><span style="display:flex;"><span>    -v /opt/x-ui/:/etc/x-ui \
 </span></span><span style="display:flex;"><span>    -v /opt/x-ui/cert:/root/cert \
 </span></span><span style="display:flex;"><span>    -v /opt/cert:/opt/cert \
-</span></span><span style="display:flex;"><span>    manliz/x-ui:latest
+</span></span><span style="display:flex;"><span>    tzebit/x-ui:latest
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -d \
 </span></span><span style="display:flex;"><span>    --name x-ui \
 </span></span><span style="display:flex;"><span>    --restart always \
@@ -100,7 +100,7 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
 </span></span><span style="display:flex;"><span>    -v /opt/x-ui/:/etc/x-ui \
 </span></span><span style="display:flex;"><span>    -v /opt/x-ui/cert:/root/cert \
 </span></span><span style="display:flex;"><span>    -v /opt/cert:/opt/cert \
-</span></span><span style="display:flex;"><span>    registry.ipv6.docker.com/manliz/x-ui:latest
+</span></span><span style="display:flex;"><span>    registry.ipv6.docker.com/tzebit/x-ui:latest
 </span></span></code></pre></div><h3 id="创建节点">创建节点</h3>
 <p>不出意外的话，你现在已经可以通过<code>http://[ip]:端口</code>访问X-UI了，打开Xray面板，输入账号密码，登录面板，点击入站列表，添加，先将<strong>传输</strong>改为<strong>ws</strong>，再将协议改为<strong>trojan</strong>，端口设置为<strong>8443</strong>，flow为无，证书方式选择<code>certificate file content</code>，公钥内容和私钥内容如下，其余默认或留空即可。点击详细信息，查看，复制链接，导入软件中，由于该项目长时间未更新，因此你需要在软件中将节点的传输协议由<code>tcp</code>改为<code>ws</code>，地址为<strong>IP</strong>即为<strong>直连</strong>，为<strong>域名</strong>即为<strong>Cloudflare CDN</strong>。</p>
 <p><strong>公钥</strong></p>
