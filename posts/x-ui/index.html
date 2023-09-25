@@ -12,13 +12,13 @@
 		<meta property="og:title" content="自建节点指南" />
 		<meta property="og:type" content="article" />
 		<meta property="og:description" content="安装BBR 推荐使用一键脚本。
-wget --no-check-certificate -O https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;amp;&amp;amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
+wget https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;amp;&amp;amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见GitLab。
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence/url/token] wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
 安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
 bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ tzebit/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry." />
 		<meta name="description" content="安装BBR 推荐使用一键脚本。
-wget --no-check-certificate -O https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;amp;&amp;amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
+wget https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;amp;&amp;amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见GitLab。
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence/url/token] wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
 安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
@@ -79,7 +79,7 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
           
           <h3 id="安装bbr">安装BBR</h3>
 <p>推荐使用一键脚本。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>wget --no-check-certificate -O https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;&amp; bash bbr.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>wget https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;&amp; bash bbr.sh
 </span></span></code></pre></div><h3 id="解析域名">解析域名</h3>
 <p>在<strong>Cloudflare</strong>中添加<strong>DNS</strong>，将你的服务器地址与域名地址绑定，并在将<strong>SSL/TLS</strong>中加密模式改为<strong>完全</strong>。</p>
 <h3 id="安装warp">安装WARP</h3>
