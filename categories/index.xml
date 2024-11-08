@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Notes</title>
-    <link>https://enotes.cf/categories/</link>
+    <link>https://enotes.eu.org/categories/</link>
     <description>Recent content in Categories on Notes</description>
     <generator>Hugo</generator>
     <language>zh</language>
-    <atom:link href="https://enotes.cf/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://enotes.eu.org/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
