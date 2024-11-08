@@ -98,111 +98,111 @@ vi /opt/xray/config.json { &#34;log&#34;: { &#34;loglevel&#34;: &#34;none&#34; }
 <h3 id="创建配置文件">创建配置文件</h3>
 <p>创建<strong>Xray</strong>配置文件，采用<strong>Trojan+WS</strong>的方式。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>vi /opt/xray/config.json
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;log&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;loglevel&#34;</span>: <span style="color:#e6db74">&#34;none&#34;</span>
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;inbounds&#34;</span>: [
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;port&#34;</span>: 2096,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;trojan&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;settings&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;clients&#34;</span>: [
-</span></span><span style="display:flex;"><span>          {
-</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;bxWBOL4rtB^fovHt&#34;</span>
-</span></span><span style="display:flex;"><span>          }
-</span></span><span style="display:flex;"><span>        ]
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;streamSettings&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;network&#34;</span>: <span style="color:#e6db74">&#34;ws&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;security&#34;</span>: <span style="color:#e6db74">&#34;tls&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;tlsSettings&#34;</span>: {
-</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;certificates&#34;</span>: [
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;certificate&#34;</span>: [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----BEGIN CERTIFICATE-----&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MIIEFTCCAv2gAwIBAgIUbfrSU0CYNdeyEGzzSDa3p9NJek8wDQYJKoZIhvcNAQEL&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgZmY0&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;OWI0YjZlMzgzNjI1ZGE5Y2QyZmIwM2FjNWFiN2YwHhcNMjIxMTI0MDg0NTAwWhcN&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MzcxMTIwMDg0NTAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMp2vF+DEpzE/eH8txam&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;2uqBay88JqwHWyZLHZnds2p72a0EBtUitRc6Ilc/CNnAy1gLMcxSVQ45uTHS/we2&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;3PLluZLuF7KQ6dcVPmwYtEWVlxbDkaX1xcGCF3r/Fqh+Oc5zUqEc6BAK4lwYZbfS&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;QbTTQ3i5CLbpIVxS/cS4SJpHCQ+PIUnjVep75xbNEwJs5a7WKSFsGLQyAAuZocMg&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;jiB3gSEjaouVdMigeddPMjQChYsLrlx6qmKZ2EQzNc0bZxnJemcB7Ul0GwG4xT+G&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;KYVHebh8RB2yXzHFC9sy5DSbXcgyUW+rLoLcxq+pNn97kuev3WlK+ndclYpBjeac&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;7O0CAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MB0GA1UdDgQWBBSDbosPCDWM41A5cyqT3MtMq+M8IzAfBgNVHSMEGDAWgBQWGvjZ&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ZaczhuI0IPc1zsUvRr2IYjBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;b3VkZmxhcmUuY29tL2JjMjA2M2Q5LWVkYzMtNDNjYy1hMWZiLWIyYzIwZTMyNTQ2&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;OS5jcmwwDQYJKoZIhvcNAQELBQADggEBAEBS4/+Uor1Iv2oAXG4k06dDp1lLNwRj&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;crQfRrzdfQt7UveCPqFGFAtMiv7lB27a7gpHK0iA82n0gcS+RnaMHgVECom5dzwj&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;u1eZNeoHyN40QpQUXKGd7deCGc6th9kfAFWV5oRIfT6RRcfPvS5uKTqnPx9QP6xs&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;mUfQScTVESG9pp9p+xKKbYd6HVa7WDMSWfK1zl/UFfqqgRRG5w9x0kNeV+awSWjn&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;6uDMnDu+dzrvQ5fDwy/xlgCEsJoJ3GO1ZhNRfSgrf1KMPbq5KdPGF25jxdE0UZM2&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;JSPqHohPSoch36DK2bcRgmpw7uQ5dkjFi+T+jWRrnPz/e9+5VknmRXE=&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----END CERTIFICATE-----&#34;</span>
-</span></span><span style="display:flex;"><span>              ],
-</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;key&#34;</span>: [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----BEGIN PRIVATE KEY-----&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDKdrxfgxKcxP3h&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/LcWptrqgWsvPCasB1smSx2Z3bNqe9mtBAbVIrUXOiJXPwjZwMtYCzHMUlUOObkx&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;0v8Httzy5bmS7heykOnXFT5sGLRFlZcWw5Gl9cXBghd6/xaofjnOc1KhHOgQCuJc&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;GGW30kG000N4uQi26SFcUv3EuEiaRwkPjyFJ41Xqe+cWzRMCbOWu1ikhbBi0MgAL&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;maHDII4gd4EhI2qLlXTIoHnXTzI0AoWLC65ceqpimdhEMzXNG2cZyXpnAe1JdBsB&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uMU/himFR3m4fEQdsl8xxQvbMuQ0m13IMlFvqy6C3MavqTZ/e5Lnr91pSvp3XJWK&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;QY3mnOztAgMBAAECggEAT6WdHj/McyKls6C8j+ss5KLr/QV/Ox6bs3lKWEzYd3Po&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;YoFahL8mGVCT0NmpzCvlcqnYucXL0xBPM/QKwsijq+RGeDA031jVvPiM+W5QgK1D&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;5j8iTXTdim34ebje+4LIj9hbMalS+3ikqtEoNsO+eHnBqby02mvk5VJ6pUhPu2yx&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;rrAW6+3QdP7HlCnXd6SOG/ZUojIe3D2UmHb2hdFDsPJxN0NK39ukcTx5XIOcpq0+&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;zRKEcu5I3PaxtZ4TP5MeUGON30RmnLBSMCWs11r8umCHph6Bfvxxh0XodtTHpGt7&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ym27zCrfKF4foYWPUUjJvNqOAr7O8h6DH5pw3s2CiwKBgQD4QlXlpCyd9FG42R4U&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;mw/PmU4/kLflSS0HVqdNw21XDy+vjCYfTv50+vAFQI8s6vlnQXEgfSkvt33WkWkX&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;JSvGbb7hqZzV8GmU94bJyUEkaHRkrY7wWgci1L49vTK7ZdxLI3LFdyRmNZ8II4zL&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ccunL6O0whNLAyD9+lyTr9oB2wKBgQDQxtnc8Y2+x7d6ZYbhwIa39M76QbOUZt6T&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;S5zhCoKy8S/OqmXG2UnoZUkK6cgbTmiXddJxVxOt7CrmOZ2kNSf5aGhAArxMkxXT&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;H6ZF3Ts5PUgm5QY0ZZThEELvu0IcsQadDt7fVfPSNEFpz8Y9oxO1RMCC8Kic4aXA&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;gCzc7dl61wKBgQCxceCpmjYV1HrRD8czXT3o2aAXSR5YMXyQ4TwGFihB8OXZqOfa&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uwCfpnkGmAV+SplnV1w/p5ZXt+SnCBpAY94tH2YvL6edNxCQXHgoJMR9/HctOuyP&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;GRo+qCcuQ9xOG9lgj37Ka4VF1Q/NpnNNOxIgdqmhWpKlrB/ZySiAm1HMvwKBgQCO&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;zjXfp2qpgLrEAgZNDQAZfF7HV4GalPLSFfptBF96PvfQiUWsypx/ViisSlUSOIPa&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;dkFIPaO8Z7rAV9C4rZN2SjBk+HoMdt+K1i9JwpXsBTsBP88KsCEyAYmHqbMDJSO8&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;8psIcSaiNhQ4aGLVbmLgrvJvnmX3SXGzRvlo9Vi5aQKBgADFDHEWDHXNHwqCy/rL&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;pWx7/EUfrb7jQkS2toMPfU0bt1dv4inPZ9B4IvFOz5Z5SnYUQ+m5DN+SWRrTb3dd&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;J9P2tMRovXj2zc47/uVdtXp/OWc23NeQUk7sHZQtLLPXBFAvWI/+F6vrHbmU0tV6&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;97zO9mU0W5gsGSSpF+BPqX53&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----END PRIVATE KEY-----&#34;</span>
-</span></span><span style="display:flex;"><span>              ]
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>          ]
-</span></span><span style="display:flex;"><span>        },
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;wsSettings&#34;</span>: {
-</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  ],
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;outbounds&#34;</span>: [
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;freedom&#34;</span>,
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;settings&#34;</span>: {
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;domainStrategy&#34;</span>: <span style="color:#e6db74">&#34;UseIPv4v6&#34;</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  ]
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="安装xray">安装Xray</h3>
+</span></span></code></pre></div><pre tabindex="0"><code class="language-config" data-lang="config">{
+  &#34;log&#34;: {
+    &#34;loglevel&#34;: &#34;none&#34;
+  },
+  &#34;inbounds&#34;: [
+    {
+      &#34;port&#34;: 2096,
+      &#34;protocol&#34;: &#34;trojan&#34;,
+      &#34;settings&#34;: {
+        &#34;clients&#34;: [
+          {
+            &#34;password&#34;: &#34;bxWBOL4rtB^fovHt&#34;
+          }
+        ]
+      },
+      &#34;streamSettings&#34;: {
+        &#34;network&#34;: &#34;ws&#34;,
+        &#34;security&#34;: &#34;tls&#34;,
+        &#34;tlsSettings&#34;: {
+          &#34;certificates&#34;: [
+            {
+              &#34;certificate&#34;: [
+                &#34;-----BEGIN CERTIFICATE-----&#34;,
+                &#34;MIIEFTCCAv2gAwIBAgIUbfrSU0CYNdeyEGzzSDa3p9NJek8wDQYJKoZIhvcNAQEL&#34;,
+                &#34;BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH&#34;,
+                &#34;Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD&#34;,
+                &#34;VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgZmY0&#34;,
+                &#34;OWI0YjZlMzgzNjI1ZGE5Y2QyZmIwM2FjNWFiN2YwHhcNMjIxMTI0MDg0NTAwWhcN&#34;,
+                &#34;MzcxMTIwMDg0NTAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy&#34;,
+                &#34;ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMp2vF+DEpzE/eH8txam&#34;,
+                &#34;2uqBay88JqwHWyZLHZnds2p72a0EBtUitRc6Ilc/CNnAy1gLMcxSVQ45uTHS/we2&#34;,
+                &#34;3PLluZLuF7KQ6dcVPmwYtEWVlxbDkaX1xcGCF3r/Fqh+Oc5zUqEc6BAK4lwYZbfS&#34;,
+                &#34;QbTTQ3i5CLbpIVxS/cS4SJpHCQ+PIUnjVep75xbNEwJs5a7WKSFsGLQyAAuZocMg&#34;,
+                &#34;jiB3gSEjaouVdMigeddPMjQChYsLrlx6qmKZ2EQzNc0bZxnJemcB7Ul0GwG4xT+G&#34;,
+                &#34;KYVHebh8RB2yXzHFC9sy5DSbXcgyUW+rLoLcxq+pNn97kuev3WlK+ndclYpBjeac&#34;,
+                &#34;7O0CAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA&#34;,
+                &#34;MB0GA1UdDgQWBBSDbosPCDWM41A5cyqT3MtMq+M8IzAfBgNVHSMEGDAWgBQWGvjZ&#34;,
+                &#34;ZaczhuI0IPc1zsUvRr2IYjBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs&#34;,
+                &#34;b3VkZmxhcmUuY29tL2JjMjA2M2Q5LWVkYzMtNDNjYy1hMWZiLWIyYzIwZTMyNTQ2&#34;,
+                &#34;OS5jcmwwDQYJKoZIhvcNAQELBQADggEBAEBS4/+Uor1Iv2oAXG4k06dDp1lLNwRj&#34;,
+                &#34;crQfRrzdfQt7UveCPqFGFAtMiv7lB27a7gpHK0iA82n0gcS+RnaMHgVECom5dzwj&#34;,
+                &#34;u1eZNeoHyN40QpQUXKGd7deCGc6th9kfAFWV5oRIfT6RRcfPvS5uKTqnPx9QP6xs&#34;,
+                &#34;mUfQScTVESG9pp9p+xKKbYd6HVa7WDMSWfK1zl/UFfqqgRRG5w9x0kNeV+awSWjn&#34;,
+                &#34;6uDMnDu+dzrvQ5fDwy/xlgCEsJoJ3GO1ZhNRfSgrf1KMPbq5KdPGF25jxdE0UZM2&#34;,
+                &#34;JSPqHohPSoch36DK2bcRgmpw7uQ5dkjFi+T+jWRrnPz/e9+5VknmRXE=&#34;,
+                &#34;-----END CERTIFICATE-----&#34;
+              ],
+              &#34;key&#34;: [
+                &#34;-----BEGIN PRIVATE KEY-----&#34;,
+                &#34;MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDKdrxfgxKcxP3h&#34;,
+                &#34;/LcWptrqgWsvPCasB1smSx2Z3bNqe9mtBAbVIrUXOiJXPwjZwMtYCzHMUlUOObkx&#34;,
+                &#34;0v8Httzy5bmS7heykOnXFT5sGLRFlZcWw5Gl9cXBghd6/xaofjnOc1KhHOgQCuJc&#34;,
+                &#34;GGW30kG000N4uQi26SFcUv3EuEiaRwkPjyFJ41Xqe+cWzRMCbOWu1ikhbBi0MgAL&#34;,
+                &#34;maHDII4gd4EhI2qLlXTIoHnXTzI0AoWLC65ceqpimdhEMzXNG2cZyXpnAe1JdBsB&#34;,
+                &#34;uMU/himFR3m4fEQdsl8xxQvbMuQ0m13IMlFvqy6C3MavqTZ/e5Lnr91pSvp3XJWK&#34;,
+                &#34;QY3mnOztAgMBAAECggEAT6WdHj/McyKls6C8j+ss5KLr/QV/Ox6bs3lKWEzYd3Po&#34;,
+                &#34;YoFahL8mGVCT0NmpzCvlcqnYucXL0xBPM/QKwsijq+RGeDA031jVvPiM+W5QgK1D&#34;,
+                &#34;5j8iTXTdim34ebje+4LIj9hbMalS+3ikqtEoNsO+eHnBqby02mvk5VJ6pUhPu2yx&#34;,
+                &#34;rrAW6+3QdP7HlCnXd6SOG/ZUojIe3D2UmHb2hdFDsPJxN0NK39ukcTx5XIOcpq0+&#34;,
+                &#34;zRKEcu5I3PaxtZ4TP5MeUGON30RmnLBSMCWs11r8umCHph6Bfvxxh0XodtTHpGt7&#34;,
+                &#34;ym27zCrfKF4foYWPUUjJvNqOAr7O8h6DH5pw3s2CiwKBgQD4QlXlpCyd9FG42R4U&#34;,
+                &#34;mw/PmU4/kLflSS0HVqdNw21XDy+vjCYfTv50+vAFQI8s6vlnQXEgfSkvt33WkWkX&#34;,
+                &#34;JSvGbb7hqZzV8GmU94bJyUEkaHRkrY7wWgci1L49vTK7ZdxLI3LFdyRmNZ8II4zL&#34;,
+                &#34;ccunL6O0whNLAyD9+lyTr9oB2wKBgQDQxtnc8Y2+x7d6ZYbhwIa39M76QbOUZt6T&#34;,
+                &#34;S5zhCoKy8S/OqmXG2UnoZUkK6cgbTmiXddJxVxOt7CrmOZ2kNSf5aGhAArxMkxXT&#34;,
+                &#34;H6ZF3Ts5PUgm5QY0ZZThEELvu0IcsQadDt7fVfPSNEFpz8Y9oxO1RMCC8Kic4aXA&#34;,
+                &#34;gCzc7dl61wKBgQCxceCpmjYV1HrRD8czXT3o2aAXSR5YMXyQ4TwGFihB8OXZqOfa&#34;,
+                &#34;uwCfpnkGmAV+SplnV1w/p5ZXt+SnCBpAY94tH2YvL6edNxCQXHgoJMR9/HctOuyP&#34;,
+                &#34;GRo+qCcuQ9xOG9lgj37Ka4VF1Q/NpnNNOxIgdqmhWpKlrB/ZySiAm1HMvwKBgQCO&#34;,
+                &#34;zjXfp2qpgLrEAgZNDQAZfF7HV4GalPLSFfptBF96PvfQiUWsypx/ViisSlUSOIPa&#34;,
+                &#34;dkFIPaO8Z7rAV9C4rZN2SjBk+HoMdt+K1i9JwpXsBTsBP88KsCEyAYmHqbMDJSO8&#34;,
+                &#34;8psIcSaiNhQ4aGLVbmLgrvJvnmX3SXGzRvlo9Vi5aQKBgADFDHEWDHXNHwqCy/rL&#34;,
+                &#34;pWx7/EUfrb7jQkS2toMPfU0bt1dv4inPZ9B4IvFOz5Z5SnYUQ+m5DN+SWRrTb3dd&#34;,
+                &#34;J9P2tMRovXj2zc47/uVdtXp/OWc23NeQUk7sHZQtLLPXBFAvWI/+F6vrHbmU0tV6&#34;,
+                &#34;97zO9mU0W5gsGSSpF+BPqX53&#34;,
+                &#34;-----END PRIVATE KEY-----&#34;
+              ]
+            }
+          ]
+        },
+        &#34;wsSettings&#34;: {
+          &#34;path&#34;: &#34;/&#34;
+        }
+      }
+    }
+  ],
+  &#34;outbounds&#34;: [
+    {
+      &#34;protocol&#34;: &#34;freedom&#34;,
+      &#34;settings&#34;: {
+        &#34;domainStrategy&#34;: &#34;UseIPv4v6&#34;
+      }
+    }
+  ]
+}
+</code></pre><h3 id="安装xray">安装Xray</h3>
 <p>可以选择docker安装，镜像采用teddysun/xray</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -d \
-</span></span><span style="display:flex;"><span>    --name=xray \
-</span></span><span style="display:flex;"><span>    --restart always \
-</span></span><span style="display:flex;"><span>    --network host \
-</span></span><span style="display:flex;"><span>    -v /opt/xray:/etc/xray \
-</span></span><span style="display:flex;"><span>    -v /opt/xray:/usr/share/xray \
-</span></span><span style="display:flex;"><span>    teddysun/xray
-</span></span></code></pre></div><p>或者直接部署，首先创建文件夹并下载程序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span>docker run -d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name<span style="color:#f92672">=</span>xray <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --restart always <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --network host <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -v /opt/xray:/etc/xray <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -v /opt/xray:/usr/share/xray <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    teddysun/xray<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>或者直接部署，首先创建文件夹并下载程序</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> -p /opt/xray/temp &amp;&amp; <span style="color:#66d9ef">cd</span> /opt/xray/temp
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip &amp;&amp; unzip Xray-linux-64.zip &amp;&amp; mv xray /opt/xray &amp;&amp; mv geoip.dat /opt/xray &amp;&amp; mv geosite.dat /opt/xray &amp;&amp; rm -rf /opt/xray/temp
 </span></span></code></pre></div><p>再设置开机自启</p>
@@ -224,9 +224,10 @@ vi /opt/xray/config.json { &#34;log&#34;: { &#34;loglevel&#34;: &#34;none&#34; }
 </span></span><span style="display:flex;"><span>WantedBy=multi-user.target
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>systemctl daemon-reload &amp;&amp; systemctl start xray &amp;&amp; systemctl enable xray
 </span></span></code></pre></div><h3 id="配置链接输出">配置链接输出</h3>
-<p>直连链接</p>
+<p>直连</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>trojan://bxWBOL4rtB<span style="color:#ae81ff">^f</span>ovHt@IP:2096?security=tls&amp;allowInsecure=1&amp;<span style="color:#66d9ef">type</span>=ws&amp;<span style="color:#66d9ef">path</span>=%2F#NAME
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>trojan://bxWBOL4rtB<span style="color:#ae81ff">^f</span>ovHt@DOMAIN:2096?security=tls&amp;sni=DOMAIN&amp;<span style="color:#66d9ef">type</span>=ws&amp;host=DOMAIN&amp;<span style="color:#66d9ef">path</span>=%2F#NAME
+</span></span></code></pre></div><p>Cloudflare CDN</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>trojan://bxWBOL4rtB<span style="color:#ae81ff">^f</span>ovHt@DOMAIN:2096?security=tls&amp;sni=DOMAIN&amp;<span style="color:#66d9ef">type</span>=ws&amp;host=DOMAIN&amp;<span style="color:#66d9ef">path</span>=%2F#NAME
 </span></span></code></pre></div>
         </div>
         <div class="row middle-xs">
