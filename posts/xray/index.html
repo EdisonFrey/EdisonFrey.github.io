@@ -2,29 +2,31 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.120.4">
+    <meta name="generator" content="Hugo 0.138.0">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Notes" />
-    <meta property="og:url" content="https://enotes.eu.org/posts/x-ui/" />
-    <link rel="canonical" href="https://enotes.eu.org/posts/x-ui/" /><link rel="alternate" type="application/atom+xml" href="https://enotes.eu.orgindex.xml" title="Notes"><title>自建节点指南</title>
+    <meta name="author" content="" />
+    <meta property="og:url" content="https://enotes.eu.org/posts/xray/" />
+    <link rel="canonical" href="https://enotes.eu.org/posts/xray/" /><link rel="alternate" type="application/atom+xml" href="https://enotes.eu.org/index.xml" title="Notes"><title>自建节点指南</title>
 		<meta property="og:title" content="自建节点指南" />
 		<meta property="og:type" content="article" />
 		<meta property="og:description" content="删除防火墙 部分厂商机器自带防火墙，可选择端口放行或删除，甲骨文可参考以下步骤。
-iptables -P INPUT ACCEPT &amp;amp;&amp;amp; iptables -P FORWARD ACCEPT &amp;amp;&amp;amp; iptables -P OUTPUT ACCEPT &amp;amp;&amp;amp; iptables -F rm -rf /etc/iptables &amp;amp;&amp;amp; reboot 安装BBR 推荐使用一键脚本。
-wget https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;amp;&amp;amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
+iptables -P INPUT ACCEPT &amp;&amp; iptables -P FORWARD ACCEPT &amp;&amp; iptables -P OUTPUT ACCEPT &amp;&amp; iptables -F rm -rf /etc/iptables &amp;&amp; reboot 安装BBR 推荐使用一键脚本。
+wget https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;&amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见GitLab。
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence/url/token] wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
-安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
-bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ tzebit/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry." />
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh [option] [lisence/url/token] wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;&amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
+安装Xray 可以选择docker安装，镜像采用teddysun/xray。
+docker run -d \ --name=xray \ --restart always \ --network host \ -v /opt/xray:/etc/xray \ -v /opt/xray:/usr/share/xray \ teddysun/xray 或者直接部署，首先创建文件夹并下载程序
+" />
 		<meta name="description" content="删除防火墙 部分厂商机器自带防火墙，可选择端口放行或删除，甲骨文可参考以下步骤。
-iptables -P INPUT ACCEPT &amp;amp;&amp;amp; iptables -P FORWARD ACCEPT &amp;amp;&amp;amp; iptables -P OUTPUT ACCEPT &amp;amp;&amp;amp; iptables -F rm -rf /etc/iptables &amp;amp;&amp;amp; reboot 安装BBR 推荐使用一键脚本。
-wget https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;amp;&amp;amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
+iptables -P INPUT ACCEPT &amp;&amp; iptables -P FORWARD ACCEPT &amp;&amp; iptables -P OUTPUT ACCEPT &amp;&amp; iptables -F rm -rf /etc/iptables &amp;&amp; reboot 安装BBR 推荐使用一键脚本。
+wget https://cdn.statically.io/gh/LKSIUS/SH/main/bbr.sh &amp;&amp; bash bbr.sh 解析域名 在Cloudflare中添加DNS，将你的服务器地址与域名地址绑定，并在将SSL/TLS中加密模式改为完全。
 安装WARP 非IPV6 only的机器请跳过这一步。IPV6 only的机器，要想用来科学上网就需要通过安装WARP补全IPV4，以获取完整的上网体验。推荐使用fscarmen的WARP脚本，项目地址见GitLab。
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;amp;&amp;amp; bash menu.sh [option] [lisence/url/token] wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;amp;&amp;amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
-安装Xray面板 推荐使用X-UI，方便管理，项目地址见Github。记住端口、用户名及密码。
-bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ tzebit/x-ui:latest docker run -d \ --name x-ui \ --restart always \ --network host \ -v /opt/x-ui/:/etc/x-ui \ -v /opt/x-ui/cert:/root/cert \ -v /opt/cert:/opt/cert \ registry." /><meta property="og:image" content="" />
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh [option] [lisence/url/token] wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;&amp; bash warp-go.sh [option] [lisence] Warp和Warp-go选择其一，按照引导安装，添加IPV4代理或添加双栈代理。
+安装Xray 可以选择docker安装，镜像采用teddysun/xray。
+docker run -d \ --name=xray \ --restart always \ --network host \ -v /opt/xray:/etc/xray \ -v /opt/xray:/usr/share/xray \ teddysun/xray 或者直接部署，首先创建文件夹并下载程序
+" /><meta property="og:image" content="" />
     
 
     
@@ -58,7 +60,7 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
           <header>
 	<div class="header-title">
 		<a href="/"
-			>Notes</a
+			></a
 		>
 	</div>
 	<div class="header-subtitle"></div>
@@ -93,82 +95,138 @@ bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/inst
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh [option] [lisence/url/token]
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh &amp;&amp; bash warp-go.sh [option] [lisence]
 </span></span></code></pre></div><p><strong>Warp</strong>和<strong>Warp-go</strong>选择其一，按照引导安装，添加<strong>IPV4代理</strong>或添加<strong>双栈代理</strong>。</p>
-<h3 id="安装xray面板">安装Xray面板</h3>
-<p>推荐使用<strong>X-UI</strong>，方便管理，项目地址见<a href="https://github.com/vaxilu/x-ui">Github</a>。记住端口、用户名及密码。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -d \
-</span></span><span style="display:flex;"><span>    --name x-ui \
+<h3 id="安装xray">安装Xray</h3>
+<p>可以选择docker安装，镜像采用teddysun/xray。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -d \
+</span></span><span style="display:flex;"><span>    --name=xray \
 </span></span><span style="display:flex;"><span>    --restart always \
 </span></span><span style="display:flex;"><span>    --network host \
-</span></span><span style="display:flex;"><span>    -v /opt/x-ui/:/etc/x-ui \
-</span></span><span style="display:flex;"><span>    -v /opt/x-ui/cert:/root/cert \
-</span></span><span style="display:flex;"><span>    -v /opt/cert:/opt/cert \
-</span></span><span style="display:flex;"><span>    tzebit/x-ui:latest
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>docker run -d \
-</span></span><span style="display:flex;"><span>    --name x-ui \
-</span></span><span style="display:flex;"><span>    --restart always \
-</span></span><span style="display:flex;"><span>    --network host \
-</span></span><span style="display:flex;"><span>    -v /opt/x-ui/:/etc/x-ui \
-</span></span><span style="display:flex;"><span>    -v /opt/x-ui/cert:/root/cert \
-</span></span><span style="display:flex;"><span>    -v /opt/cert:/opt/cert \
-</span></span><span style="display:flex;"><span>    registry.ipv6.docker.com/tzebit/x-ui:latest
+</span></span><span style="display:flex;"><span>    -v /opt/xray:/etc/xray \
+</span></span><span style="display:flex;"><span>    -v /opt/xray:/usr/share/xray \
+</span></span><span style="display:flex;"><span>    teddysun/xray
+</span></span></code></pre></div><p>或者直接部署，首先创建文件夹并下载程序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">mkdir</span> -p /opt/xray/temp &amp;&amp; <span style="color:#66d9ef">cd</span> /opt/xray/temp
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip &amp;&amp; unzip Xray-linux-64.zip &amp;&amp; mv xray /opt/xray &amp;&amp; mv geoip.dat /opt/xray &amp;&amp; mv geosite.dat /opt/xray &amp;&amp; rm -rf /opt/xray/temp
+</span></span></code></pre></div><p>再设置开机自启</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>vi /etc/systemd/system/xray.service
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>[Unit]
+</span></span><span style="display:flex;"><span>Description=Xray
+</span></span><span style="display:flex;"><span>After=network.target
+</span></span><span style="display:flex;"><span>After=nss-lookup.target
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[Service]
+</span></span><span style="display:flex;"><span>WorkingDirectory=/opt/xray/
+</span></span><span style="display:flex;"><span>ExecStart=/opt/xray/xray run -config /opt/xray/config.json
+</span></span><span style="display:flex;"><span>Restart=on-failure
+</span></span><span style="display:flex;"><span>RestartPreventExitStatus=23
+</span></span><span style="display:flex;"><span>LimitNPROC=10000
+</span></span><span style="display:flex;"><span>LimitNOFILE=1000000
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[Install]
+</span></span><span style="display:flex;"><span>WantedBy=multi-user.target
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>systemctl start xray
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>systemctl enable xray
 </span></span></code></pre></div><h3 id="创建节点">创建节点</h3>
-<p>不出意外的话，你现在已经可以通过<code>http://[ip]:端口</code>访问X-UI了，打开Xray面板，输入账号密码，登录面板，点击入站列表，添加，先将<strong>传输</strong>改为<strong>ws</strong>，再将协议改为<strong>trojan</strong>，端口设置为<strong>8443</strong>，flow为无，证书方式选择<code>certificate file content</code>，公钥内容和私钥内容如下，其余默认或留空即可。点击详细信息，查看，复制链接，导入软件中，由于该项目长时间未更新，因此你需要在软件中将节点的传输协议由<code>tcp</code>改为<code>ws</code>，地址为<strong>IP</strong>即为<strong>直连</strong>，为<strong>域名</strong>即为<strong>Cloudflare CDN</strong>。</p>
-<p><strong>公钥</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>-----BEGIN CERTIFICATE-----
-</span></span><span style="display:flex;"><span>MIIEFTCCAv2gAwIBAgIUbfrSU0CYNdeyEGzzSDa3p9NJek8wDQYJKoZIhvcNAQEL
-</span></span><span style="display:flex;"><span>BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH
-</span></span><span style="display:flex;"><span>Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD
-</span></span><span style="display:flex;"><span>VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgZmY0
-</span></span><span style="display:flex;"><span>OWI0YjZlMzgzNjI1ZGE5Y2QyZmIwM2FjNWFiN2YwHhcNMjIxMTI0MDg0NTAwWhcN
-</span></span><span style="display:flex;"><span>MzcxMTIwMDg0NTAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy
-</span></span><span style="display:flex;"><span>ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMp2vF+DEpzE/eH8txam
-</span></span><span style="display:flex;"><span>2uqBay88JqwHWyZLHZnds2p72a0EBtUitRc6Ilc/CNnAy1gLMcxSVQ45uTHS/we2
-</span></span><span style="display:flex;"><span>3PLluZLuF7KQ6dcVPmwYtEWVlxbDkaX1xcGCF3r/Fqh+Oc5zUqEc6BAK4lwYZbfS
-</span></span><span style="display:flex;"><span>QbTTQ3i5CLbpIVxS/cS4SJpHCQ+PIUnjVep75xbNEwJs5a7WKSFsGLQyAAuZocMg
-</span></span><span style="display:flex;"><span>jiB3gSEjaouVdMigeddPMjQChYsLrlx6qmKZ2EQzNc0bZxnJemcB7Ul0GwG4xT+G
-</span></span><span style="display:flex;"><span>KYVHebh8RB2yXzHFC9sy5DSbXcgyUW+rLoLcxq+pNn97kuev3WlK+ndclYpBjeac
-</span></span><span style="display:flex;"><span>7O0CAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA
-</span></span><span style="display:flex;"><span>MB0GA1UdDgQWBBSDbosPCDWM41A5cyqT3MtMq+M8IzAfBgNVHSMEGDAWgBQWGvjZ
-</span></span><span style="display:flex;"><span>ZaczhuI0IPc1zsUvRr2IYjBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs
-</span></span><span style="display:flex;"><span>b3VkZmxhcmUuY29tL2JjMjA2M2Q5LWVkYzMtNDNjYy1hMWZiLWIyYzIwZTMyNTQ2
-</span></span><span style="display:flex;"><span>OS5jcmwwDQYJKoZIhvcNAQELBQADggEBAEBS4/+Uor1Iv2oAXG4k06dDp1lLNwRj
-</span></span><span style="display:flex;"><span>crQfRrzdfQt7UveCPqFGFAtMiv7lB27a7gpHK0iA82n0gcS+RnaMHgVECom5dzwj
-</span></span><span style="display:flex;"><span>u1eZNeoHyN40QpQUXKGd7deCGc6th9kfAFWV5oRIfT6RRcfPvS5uKTqnPx9QP6xs
-</span></span><span style="display:flex;"><span>mUfQScTVESG9pp9p+xKKbYd6HVa7WDMSWfK1zl/UFfqqgRRG5w9x0kNeV+awSWjn
-</span></span><span style="display:flex;"><span>6uDMnDu+dzrvQ5fDwy/xlgCEsJoJ3GO1ZhNRfSgrf1KMPbq5KdPGF25jxdE0UZM2
-</span></span><span style="display:flex;"><span>JSPqHohPSoch36DK2bcRgmpw7uQ5dkjFi+T+jWRrnPz/e9+5VknmRXE=
-</span></span><span style="display:flex;"><span>-----END CERTIFICATE-----
-</span></span></code></pre></div><p><strong>私钥</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>-----BEGIN PRIVATE KEY-----
-</span></span><span style="display:flex;"><span>MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDKdrxfgxKcxP3h
-</span></span><span style="display:flex;"><span>/LcWptrqgWsvPCasB1smSx2Z3bNqe9mtBAbVIrUXOiJXPwjZwMtYCzHMUlUOObkx
-</span></span><span style="display:flex;"><span>0v8Httzy5bmS7heykOnXFT5sGLRFlZcWw5Gl9cXBghd6/xaofjnOc1KhHOgQCuJc
-</span></span><span style="display:flex;"><span>GGW30kG000N4uQi26SFcUv3EuEiaRwkPjyFJ41Xqe+cWzRMCbOWu1ikhbBi0MgAL
-</span></span><span style="display:flex;"><span>maHDII4gd4EhI2qLlXTIoHnXTzI0AoWLC65ceqpimdhEMzXNG2cZyXpnAe1JdBsB
-</span></span><span style="display:flex;"><span>uMU/himFR3m4fEQdsl8xxQvbMuQ0m13IMlFvqy6C3MavqTZ/e5Lnr91pSvp3XJWK
-</span></span><span style="display:flex;"><span>QY3mnOztAgMBAAECggEAT6WdHj/McyKls6C8j+ss5KLr/QV/Ox6bs3lKWEzYd3Po
-</span></span><span style="display:flex;"><span>YoFahL8mGVCT0NmpzCvlcqnYucXL0xBPM/QKwsijq+RGeDA031jVvPiM+W5QgK1D
-</span></span><span style="display:flex;"><span>5j8iTXTdim34ebje+4LIj9hbMalS+3ikqtEoNsO+eHnBqby02mvk5VJ6pUhPu2yx
-</span></span><span style="display:flex;"><span>rrAW6+3QdP7HlCnXd6SOG/ZUojIe3D2UmHb2hdFDsPJxN0NK39ukcTx5XIOcpq0+
-</span></span><span style="display:flex;"><span>zRKEcu5I3PaxtZ4TP5MeUGON30RmnLBSMCWs11r8umCHph6Bfvxxh0XodtTHpGt7
-</span></span><span style="display:flex;"><span>ym27zCrfKF4foYWPUUjJvNqOAr7O8h6DH5pw3s2CiwKBgQD4QlXlpCyd9FG42R4U
-</span></span><span style="display:flex;"><span>mw/PmU4/kLflSS0HVqdNw21XDy+vjCYfTv50+vAFQI8s6vlnQXEgfSkvt33WkWkX
-</span></span><span style="display:flex;"><span>JSvGbb7hqZzV8GmU94bJyUEkaHRkrY7wWgci1L49vTK7ZdxLI3LFdyRmNZ8II4zL
-</span></span><span style="display:flex;"><span>ccunL6O0whNLAyD9+lyTr9oB2wKBgQDQxtnc8Y2+x7d6ZYbhwIa39M76QbOUZt6T
-</span></span><span style="display:flex;"><span>S5zhCoKy8S/OqmXG2UnoZUkK6cgbTmiXddJxVxOt7CrmOZ2kNSf5aGhAArxMkxXT
-</span></span><span style="display:flex;"><span>H6ZF3Ts5PUgm5QY0ZZThEELvu0IcsQadDt7fVfPSNEFpz8Y9oxO1RMCC8Kic4aXA
-</span></span><span style="display:flex;"><span>gCzc7dl61wKBgQCxceCpmjYV1HrRD8czXT3o2aAXSR5YMXyQ4TwGFihB8OXZqOfa
-</span></span><span style="display:flex;"><span>uwCfpnkGmAV+SplnV1w/p5ZXt+SnCBpAY94tH2YvL6edNxCQXHgoJMR9/HctOuyP
-</span></span><span style="display:flex;"><span>GRo+qCcuQ9xOG9lgj37Ka4VF1Q/NpnNNOxIgdqmhWpKlrB/ZySiAm1HMvwKBgQCO
-</span></span><span style="display:flex;"><span>zjXfp2qpgLrEAgZNDQAZfF7HV4GalPLSFfptBF96PvfQiUWsypx/ViisSlUSOIPa
-</span></span><span style="display:flex;"><span>dkFIPaO8Z7rAV9C4rZN2SjBk+HoMdt+K1i9JwpXsBTsBP88KsCEyAYmHqbMDJSO8
-</span></span><span style="display:flex;"><span>8psIcSaiNhQ4aGLVbmLgrvJvnmX3SXGzRvlo9Vi5aQKBgADFDHEWDHXNHwqCy/rL
-</span></span><span style="display:flex;"><span>pWx7/EUfrb7jQkS2toMPfU0bt1dv4inPZ9B4IvFOz5Z5SnYUQ+m5DN+SWRrTb3dd
-</span></span><span style="display:flex;"><span>J9P2tMRovXj2zc47/uVdtXp/OWc23NeQUk7sHZQtLLPXBFAvWI/+F6vrHbmU0tV6
-</span></span><span style="display:flex;"><span>97zO9mU0W5gsGSSpF+BPqX53
-</span></span><span style="display:flex;"><span>-----END PRIVATE KEY-----
-</span></span></code></pre></div>
+<p>再编辑xray配置文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>vi /opt/xray/config.json
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;log&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;loglevel&#34;</span>: <span style="color:#e6db74">&#34;none&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;inbounds&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;port&#34;</span>: 2096,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;trojan&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;settings&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;clients&#34;</span>: [
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;password&#34;</span>: <span style="color:#e6db74">&#34;FVmP0iqPg^9a8VVz&#34;</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;streamSettings&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;network&#34;</span>: <span style="color:#e6db74">&#34;ws&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;security&#34;</span>: <span style="color:#e6db74">&#34;tls&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;tlsSettings&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;certificates&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;certificate&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----BEGIN CERTIFICATE-----&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MIIEFTCCAv2gAwIBAgIUbfrSU0CYNdeyEGzzSDa3p9NJek8wDQYJKoZIhvcNAQEL&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;BQAwgagxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQH&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Ew1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZGZsYXJlLCBJbmMuMRswGQYD&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;VQQLExJ3d3cuY2xvdWRmbGFyZS5jb20xNDAyBgNVBAMTK01hbmFnZWQgQ0EgZmY0&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;OWI0YjZlMzgzNjI1ZGE5Y2QyZmIwM2FjNWFiN2YwHhcNMjIxMTI0MDg0NTAwWhcN&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MzcxMTIwMDg0NTAwWjAiMQswCQYDVQQGEwJVUzETMBEGA1UEAxMKQ2xvdWRmbGFy&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMp2vF+DEpzE/eH8txam&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;2uqBay88JqwHWyZLHZnds2p72a0EBtUitRc6Ilc/CNnAy1gLMcxSVQ45uTHS/we2&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;3PLluZLuF7KQ6dcVPmwYtEWVlxbDkaX1xcGCF3r/Fqh+Oc5zUqEc6BAK4lwYZbfS&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;QbTTQ3i5CLbpIVxS/cS4SJpHCQ+PIUnjVep75xbNEwJs5a7WKSFsGLQyAAuZocMg&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;jiB3gSEjaouVdMigeddPMjQChYsLrlx6qmKZ2EQzNc0bZxnJemcB7Ul0GwG4xT+G&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;KYVHebh8RB2yXzHFC9sy5DSbXcgyUW+rLoLcxq+pNn97kuev3WlK+ndclYpBjeac&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;7O0CAwEAAaOBuzCBuDATBgNVHSUEDDAKBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAA&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MB0GA1UdDgQWBBSDbosPCDWM41A5cyqT3MtMq+M8IzAfBgNVHSMEGDAWgBQWGvjZ&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ZaczhuI0IPc1zsUvRr2IYjBTBgNVHR8ETDBKMEigRqBEhkJodHRwOi8vY3JsLmNs&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;b3VkZmxhcmUuY29tL2JjMjA2M2Q5LWVkYzMtNDNjYy1hMWZiLWIyYzIwZTMyNTQ2&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;OS5jcmwwDQYJKoZIhvcNAQELBQADggEBAEBS4/+Uor1Iv2oAXG4k06dDp1lLNwRj&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;crQfRrzdfQt7UveCPqFGFAtMiv7lB27a7gpHK0iA82n0gcS+RnaMHgVECom5dzwj&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;u1eZNeoHyN40QpQUXKGd7deCGc6th9kfAFWV5oRIfT6RRcfPvS5uKTqnPx9QP6xs&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;mUfQScTVESG9pp9p+xKKbYd6HVa7WDMSWfK1zl/UFfqqgRRG5w9x0kNeV+awSWjn&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;6uDMnDu+dzrvQ5fDwy/xlgCEsJoJ3GO1ZhNRfSgrf1KMPbq5KdPGF25jxdE0UZM2&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;JSPqHohPSoch36DK2bcRgmpw7uQ5dkjFi+T+jWRrnPz/e9+5VknmRXE=&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----END CERTIFICATE-----&#34;</span>
+</span></span><span style="display:flex;"><span>              ],
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#34;key&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----BEGIN PRIVATE KEY-----&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDKdrxfgxKcxP3h&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;/LcWptrqgWsvPCasB1smSx2Z3bNqe9mtBAbVIrUXOiJXPwjZwMtYCzHMUlUOObkx&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;0v8Httzy5bmS7heykOnXFT5sGLRFlZcWw5Gl9cXBghd6/xaofjnOc1KhHOgQCuJc&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;GGW30kG000N4uQi26SFcUv3EuEiaRwkPjyFJ41Xqe+cWzRMCbOWu1ikhbBi0MgAL&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;maHDII4gd4EhI2qLlXTIoHnXTzI0AoWLC65ceqpimdhEMzXNG2cZyXpnAe1JdBsB&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uMU/himFR3m4fEQdsl8xxQvbMuQ0m13IMlFvqy6C3MavqTZ/e5Lnr91pSvp3XJWK&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;QY3mnOztAgMBAAECggEAT6WdHj/McyKls6C8j+ss5KLr/QV/Ox6bs3lKWEzYd3Po&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;YoFahL8mGVCT0NmpzCvlcqnYucXL0xBPM/QKwsijq+RGeDA031jVvPiM+W5QgK1D&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;5j8iTXTdim34ebje+4LIj9hbMalS+3ikqtEoNsO+eHnBqby02mvk5VJ6pUhPu2yx&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;rrAW6+3QdP7HlCnXd6SOG/ZUojIe3D2UmHb2hdFDsPJxN0NK39ukcTx5XIOcpq0+&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;zRKEcu5I3PaxtZ4TP5MeUGON30RmnLBSMCWs11r8umCHph6Bfvxxh0XodtTHpGt7&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ym27zCrfKF4foYWPUUjJvNqOAr7O8h6DH5pw3s2CiwKBgQD4QlXlpCyd9FG42R4U&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;mw/PmU4/kLflSS0HVqdNw21XDy+vjCYfTv50+vAFQI8s6vlnQXEgfSkvt33WkWkX&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;JSvGbb7hqZzV8GmU94bJyUEkaHRkrY7wWgci1L49vTK7ZdxLI3LFdyRmNZ8II4zL&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ccunL6O0whNLAyD9+lyTr9oB2wKBgQDQxtnc8Y2+x7d6ZYbhwIa39M76QbOUZt6T&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;S5zhCoKy8S/OqmXG2UnoZUkK6cgbTmiXddJxVxOt7CrmOZ2kNSf5aGhAArxMkxXT&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;H6ZF3Ts5PUgm5QY0ZZThEELvu0IcsQadDt7fVfPSNEFpz8Y9oxO1RMCC8Kic4aXA&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;gCzc7dl61wKBgQCxceCpmjYV1HrRD8czXT3o2aAXSR5YMXyQ4TwGFihB8OXZqOfa&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uwCfpnkGmAV+SplnV1w/p5ZXt+SnCBpAY94tH2YvL6edNxCQXHgoJMR9/HctOuyP&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;GRo+qCcuQ9xOG9lgj37Ka4VF1Q/NpnNNOxIgdqmhWpKlrB/ZySiAm1HMvwKBgQCO&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;zjXfp2qpgLrEAgZNDQAZfF7HV4GalPLSFfptBF96PvfQiUWsypx/ViisSlUSOIPa&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;dkFIPaO8Z7rAV9C4rZN2SjBk+HoMdt+K1i9JwpXsBTsBP88KsCEyAYmHqbMDJSO8&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;8psIcSaiNhQ4aGLVbmLgrvJvnmX3SXGzRvlo9Vi5aQKBgADFDHEWDHXNHwqCy/rL&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;pWx7/EUfrb7jQkS2toMPfU0bt1dv4inPZ9B4IvFOz5Z5SnYUQ+m5DN+SWRrTb3dd&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;J9P2tMRovXj2zc47/uVdtXp/OWc23NeQUk7sHZQtLLPXBFAvWI/+F6vrHbmU0tV6&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;97zO9mU0W5gsGSSpF+BPqX53&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;-----END PRIVATE KEY-----&#34;</span>
+</span></span><span style="display:flex;"><span>              ]
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          ]
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;wsSettings&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#e6db74">&#34;path&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;outbounds&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;freedom&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;settings&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;domainStrategy&#34;</span>: <span style="color:#e6db74">&#34;UseIPv4v6&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>重启程序即可使用</p>
+
         </div>
         <div class="row middle-xs">
           <div class="col-xs-12">
